@@ -307,7 +307,8 @@ define(["lib-build/css!lib-app/bootstrap/css/bootstrap.min",
 			}
 			
 			// Direct creation and not signed-in
-			if ( app.isDirectCreation && isProd() && ! (CommonHelper.getPortalUser() || app.portal.getPortalUser()) ) {
+			// redirectToSignIn() does not work; short-circuit this check to use portalLogin() below
+			if (false && app.isDirectCreation && isProd() && ! (CommonHelper.getPortalUser() || app.portal.getPortalUser()) ) {
 				redirectToSignIn();
 				return;
 			}
