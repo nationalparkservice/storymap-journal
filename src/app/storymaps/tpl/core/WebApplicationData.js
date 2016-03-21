@@ -323,7 +323,7 @@ define(["dojo/_base/lang"],
 				var logoURL = ! this.getHeader().logoURL ? app.cfg.HEADER_LOGO_URL : this.getHeader().logoURL;
 				
 				if ( logoURL == app.cfg.HEADER_LOGO_URL && this.getColors() && this.getColors().esriLogo == "white" )
-					logoURL = "resources/tpl/viewer/icons/esri-logo-white.png";
+					logoURL = "resources/tpl/viewer/icons/nps-logo-white.png";
 				
 				return logoURL;
 			},

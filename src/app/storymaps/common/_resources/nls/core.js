@@ -108,7 +108,7 @@ define({
 			},
 			settingsHeader: {
 				title: "Header",
-				logoEsri: "Esri logo",
+				logoEsri: "NPS logo",
 				logoNone: "No logo",
 				logoCustom: "Custom logo",
 				logoCustomPlaceholder: "URL (max 250x50 pixels)",
