@@ -91,7 +91,6 @@
 	position:relative;
 	height: 60px;
 	border:none;
-	outline:none;
 }
 
 /* Firefox don't like this - vertical align on top instead */

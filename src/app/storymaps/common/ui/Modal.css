@@ -117,7 +117,6 @@
 .btn-naked {
 	border: 0;
 	color: #428BC9;
-	outline: none !important;
 	background-color: transparent;
 	box-shadow: none !important;
 }
