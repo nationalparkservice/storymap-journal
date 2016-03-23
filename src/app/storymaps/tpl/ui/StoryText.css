@@ -134,7 +134,7 @@ figure > .image-wrapper {
 	pointer-events: all;
 }
 
-p[tabindex='0'] > .image-wrapper {
+p > .image-wrapper {
 	cursor: pointer;
 	pointer-events: all;
 }
