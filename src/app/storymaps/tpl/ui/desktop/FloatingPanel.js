@@ -200,13 +200,13 @@ define(["lib-build/tpl!./FloatingPanelSection",
 			
 			this.enableSwiperKeybordEvent = function()
 			{
-				_swipePane.enableKeyboardControl();
+				//_swipePane.enableKeyboardControl();
 				$(document).keyup(onKeyboardEvent);
 			};
 			
 			this.disableSwiperKeybordEvent = function()
 			{
-				_swipePane.disableKeyboardControl();
+				//_swipePane.disableKeyboardControl();
 				$(document).unbind('keyup', onKeyboardEvent);
 			};
 			
@@ -252,87 +252,6 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				
 				// Builder edit btn
 				container.find(".panelEditBtn").toggle(!! (isInBuilder && sections && sections.length));
-				
-				var titles = container.find('.title');
-				
-				// Fire a click event when focusing through keyboard and prevent double event when clicking with mouse
-				titles
-					.focus(function(){
-						if (!$(this).data("mouseDown")  && ! $(this).parents('.section').hasClass("swiper-slide-active")){
-							onDotNavigation($(this).parents(".section").index());
-						}
-					})
-					.mousedown(function(){
-						$(this).data("mouseDown", true);
-					})
-					.mouseup(function(){
-						$(this).removeData("mouseDown");
-					});
-				
-				titles.each(function(i, title){
-					var $title = $(title),
-						sectionLastContent = $title,
-						tabableContent = sectionLastContent.siblings(".content").find("[tabindex=0]");
-					
-					if ( tabableContent.length )
-						sectionLastContent = tabableContent.last();
-					
-					sectionLastContent.on('keydown', function(e) {
-						if( e.keyCode === 9 && ! e.shiftKey ) {
-							// Focus out when embedded
-							if (window != window.top) {
-								return true;
-							}
-							
-							if ( i < titles.length - 1 ) {
-								onDotNavigation(i + 1);
-								setTimeout(function(){
-									titles.eq(i + 1).focus();
-								}, 200);
-							}
-							else {
-								focusHeader();
-							}
-							return false;
-						}
-					});
-					
-					$title.on('keydown', function(e) {
-						if( e.keyCode === 9 ) {
-							if ( e.shiftKey ) {
-								if ( i > 0 ) {
-									onDotNavigation(i - 1);
-									setTimeout(function(){
-										titles.eq(i - 1).focus();
-									}, 200);
-								}
-								else {
-									focusHeader();
-								}
-								return false;
-							}
-						}
-					});
-				});
-			}
-			
-			function focusHeader()
-			{
-				container.find(".header").removeAttr("aria-hidden");
-				
-				if ( ! container.find(".header .linkContainer a").length )
-					container.find(".header .linkContainer").attr("tabindex", "0");
-				else
-					container.find(".header .linkContainer a").attr("tabindex", "0");
-				
-				container.find(".header .shareIcon").attr("tabindex", "0");
-				
-				if ( container.find(".header .linkContainer a").length )
-					container.find(".header .linkContainer a")[0].focus();
-				else if ( container.find(".header .linkContainer").length )
-					container.find(".header .linkContainer")[0].focus();
-				else if ( container.find(".header .shareIcon:visible").length )
-					container.find(".header .shareIcon")[0].focus();
 			}
 			
 			function createSectionBlock(index, status, content, title)
@@ -351,7 +270,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				return viewSectionTpl({
 					optHtmlClass: optHtmlClass,
 					title: StoryText.prepareEditorContent(title),
-					content: StoryText.prepareEditorContent(content, true),
+					content: StoryText.prepareEditorContent(content),
 					lblShare: i18n.viewer.headerFromCommon.share,
 					shareURL: shareURL,
 					scroll: i18n.viewer.floatLayout.scroll
@@ -363,7 +282,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				_swipePane = new Swiper(container.find('.swiper-container')[0], {
 					mode: 'vertical',
 					loop: false,
-					keyboardControl: true,
+					//keyboardControl: true,
 					cssWidthAndHeight: true,
 					onlyExternal: true,
 					onSlideNext: function(swiper){
@@ -612,17 +531,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 			
 			function onKeyboardEvent(e)
 			{
-				if ( ! _swipePane )
-					return;
-				
-				if ( e.keyCode == 34 )
-					_swipePane.swipeNext();
-				else if ( e.keyCode == 33 )
-					_swipePane.swipePrev();
-				else if ( e.keyCode == 36 )
-					_swipePane.swipeTo(0);
-				else if ( e.keyCode == 35 )
-					_swipePane.swipeTo(container.find('.swiper-slide').length - 1);
+				/* jshint unused:vars */
 			}
 			
 			/*

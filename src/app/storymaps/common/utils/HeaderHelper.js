@@ -150,17 +150,6 @@ define([
 					_shareDialog.present(SocialSharing.cleanURL(url, true));
 				});
 				
-				// Bind keyboard enter to click
-				container.find(".shareIcon, .share-all").off('keypress').keypress(function (e) {
-					if ( $(this).hasClass("disabled") )
-						return;
-					
-					if(e.which == 13) {
-						$(this).click();
-						return false;  
-					}
-				});
-				
 				container.find('.share_facebook').attr("title", i18n.viewer.headerFromCommon.facebookTooltip);
 				container.find('.share_twitter').attr("title", i18n.viewer.headerFromCommon.twitterTooltip);
 				container.find('.share_bitly').attr("title", i18n.viewer.headerFromCommon.bitlyTooltip);

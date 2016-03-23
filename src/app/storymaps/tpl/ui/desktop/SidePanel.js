@@ -267,62 +267,10 @@ define(["lib-build/tpl!./SidePanelSection",
 				
 				container.show();
 				setTimeout(function(){
-					// If not in a frame, focus the panel so that keyboard events works
-					if ( window.self === window.top )
-						container.find(".sections").focus();
-					
 					loadVisibleIframe();
 				}, 0);
 				
 				
-				var titles = container.find('.title');
-				
-				// Fire a click event when focusing through keyboard and prevent double event when clicking with mouse
-				titles
-					.focus(function(){
-						if (!$(this).data("mouseDown")){
-							$(this).click();
-						}
-					})
-					.mousedown(function(){
-						$(this).data("mouseDown", true);
-					})
-					.mouseup(function(){
-						$(this).removeData("mouseDown");
-					});
-				
-				// Find the last entry header or "element" of it's description
-				var lastTabElement = titles.last();
-				if( lastTabElement.siblings(".content").find("[tabindex=0]").length )
-					lastTabElement = lastTabElement.siblings(".content").find("[tabindex=0]").last();
-				
-				// Tab on the last element has to navigate to the header
-				lastTabElement.on('keydown', function(e) {
-					if( e.keyCode === 9 && ! e.shiftKey ) {
-						// Focus out when embedded
-						if (window != window.top) {
-							return true;
-						}
-						
-						container.find(".header").removeAttr("aria-hidden");
-
-						if ( ! container.find(".header .linkContainer a").length )
-							container.find(".header .linkContainer").attr("tabindex", "0");
-						else
-							container.find(".header .linkContainer a").attr("tabindex", "0");
-						
-						container.find(".header .shareIcon").attr("tabindex", "0");
-						
-						if ( container.find(".header .linkContainer a").length )
-							container.find(".header .linkContainer a")[0].focus();
-						else if ( container.find(".header .linkContainer").length )
-							container.find(".header .linkContainer")[0].focus();
-						else if ( container.find(".header .shareIcon:visible").length )
-							container.find(".header .shareIcon")[0].focus();
-						
-						return false;
-					}
-				});
 			}
 			
 			function createSectionBlock(/*editEl,*/ index, status, content, title)
@@ -341,7 +289,7 @@ define(["lib-build/tpl!./SidePanelSection",
 				return viewSectionTpl({
 					optHtmlClass: optHtmlClass,
 					title: StoryText.prepareEditorContent(title),
-					content: StoryText.prepareEditorContent(content, true),
+					content: StoryText.prepareEditorContent(content),
 					lblShare: i18n.viewer.headerFromCommon.share,
 					shareURL: shareURL
 				});

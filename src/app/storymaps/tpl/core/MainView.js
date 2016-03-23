@@ -190,66 +190,6 @@ define(["lib-build/css!./MainView",
 				topic.subscribe("ADDEDIT_SHOW_WEBMAP", app.ui.mainStage.showWebmapById);
 				topic.subscribe("ADDEDIT_RELOAD_CURRENT_WEBMAP", app.ui.mainStage.reloadCurrentWebmap);
 				
-				// Prevent focus on mousedown 
-				// Focus stay allowed with keyboard with 508
-				$("body").on("mousedown", "*", function(e) {
-					if (($(this).is(":focus") || $(this).is(e.target)) && $(this).css("outline-style") == "none") {
-						$(this).css("outline", "none").on("blur", function() {
-							$(this).off("blur").css("outline", "");
-						});
-						
-						// Prevent outline over image-container in description panel - Unsure why needed
-						if ( $(this).parents(".image-container").length ) {
-							$(this).parents(".image-container").css("outline", "none").on("blur", function() {
-								$(this).off("blur").css("outline", "");
-							});
-						}
-						
-						// Prevent outline over image caption container in description panel - Unsure why needed
-						if ( $(this).parents("figure.caption").length ) {
-							$(this).parents("figure.caption").css("outline", "none").on("blur", function() {
-								$(this).off("blur").css("outline", "");
-							});
-						}
-						
-						// Prevent outline over title in description panel - Unsure why needed
-						if ( $(this).parents(".title").length ) {
-							$(this).parents(".title").css("outline", "none").on("blur", function() {
-								$(this).off("blur").css("outline", "");
-							});
-						}
-						
-						// Prevent outline over paragraph in description panel - Unsure why needed
-						if ( $(this).parentsUntil(".content", "div").length ) {
-							$(this).parentsUntil(".content", "div").css("outline", "none").on("blur", function() {
-								$(this).off("blur").css("outline", "");
-							});
-						}
-						
-						// Prevent outline over paragraph in description panel - Unsure why needed
-						if ( $(this).parents("p").length ) {
-							$(this).parents("p").css("outline", "none").on("blur", function() {
-								$(this).off("blur").css("outline", "");
-							});
-						}
-						
-						// Prevent outline over ul in description panel - Unsure why needed
-						if ( $(this).parents("ul").length ) {
-							$(this).parents("ul").css("outline", "none").on("blur", function() {
-								$(this).off("blur").css("outline", "");
-							});
-						}
-						
-						// Prevent outline over ul in description panel - Unsure why needed
-						if ( $(this).parents("ol").length ) {
-							$(this).parents("ol").css("outline", "none").on("blur", function() {
-								$(this).off("blur").css("outline", "");
-							});
-						}
-						
-					}
-				});
-				
 				return true;
 			};
 
