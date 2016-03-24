@@ -306,7 +306,7 @@ define(["lib-build/tpl!./SidePanelSection",
 				container.find(".scroll").show();
 				container.find(".scrollInner").tooltip({
 					title: i18n.viewer.sideLayout.scroll,
-					trigger: 'hover'
+					trigger: 'hover focus'
 				});
 				
 				CommonHelper.addCSSRule(".scroll .tooltip-inner { background-color: " + colors.text + "; color: " + colors.panel + "; }");
