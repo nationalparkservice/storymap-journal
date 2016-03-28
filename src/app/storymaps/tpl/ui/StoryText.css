@@ -90,6 +90,7 @@ figure figcaption {
 	margin-top: 10px;
 }
 
+.btn-fullscreen:focus,
 .btn-fullscreen:hover {
 	opacity: 1.0;
 	cursor: pointer;
@@ -196,6 +197,7 @@ p > .image-wrapper {
 	color: transparent !important;
 }
 
+#cboxClose:focus,
 #cboxClose:hover {
 	background-position-y: -39px !important;
 }

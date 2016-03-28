@@ -34,6 +34,8 @@
 	opacity: 0.6;
 }
 
+.mapControls .glyphicon-chevron-up:focus,
+.mapControls .glyphicon-chevron-down:focus,
 .mapControls .glyphicon-chevron-up:hover,
 .mapControls .glyphicon-chevron-down:hover {
 	opacity: 1.0;
@@ -81,6 +83,7 @@
 	user-select: none;
 }
 
+.mapControls .settingsGear:focus,
 .mapControls .settingsGear:hover {
 	opacity: 1.0;
 }

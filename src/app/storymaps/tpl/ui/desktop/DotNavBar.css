@@ -34,6 +34,7 @@
 	opacity: 0.8;
 }
 
+.navDots .navDotsNav:focus,
 .navDots .navDotsNav:hover {
 	opacity: 1.0;
 }
@@ -98,6 +99,7 @@
 	line-height: 19px;
 }
 
+.navDots .dot:focus,
 .navDots .dot:hover {
 	color: #FFF !important;
 }
@@ -170,6 +172,7 @@
 	width: 34px;
 }
 
+.navDots .navGroup:focus,
 .navDots .navGroup:hover {
 	color: #FFF;
 }

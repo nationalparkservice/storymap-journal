@@ -280,6 +280,7 @@ body[data-theme-major=black] .builder-content-panel .builder-content-panel-group
 	opacity: 0.8;
 }
 
+.sectionPanel .social .shareIcon:focus,
 .sectionPanel .social .shareIcon:hover {
 	color: inherit;
 	opacity: 1.0;

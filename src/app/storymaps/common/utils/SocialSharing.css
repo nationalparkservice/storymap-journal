@@ -19,6 +19,7 @@
 	margin-left: 4px;
 }
 
+.shareIcon:focus,
 .shareIcon:hover {
 	color: #ACACAC;
 }

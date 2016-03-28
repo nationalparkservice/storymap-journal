@@ -79,6 +79,7 @@ a {
 	cursor: pointer;
 }
 
+a:focus,
 a:hover{
 	text-decoration:underline;
 }

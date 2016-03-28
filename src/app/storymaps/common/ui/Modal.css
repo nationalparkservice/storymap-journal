@@ -121,6 +121,7 @@
 	box-shadow: none !important;
 }
 
+.btn-naked:focus,
 .btn-naked:hover {
 	color: #3276b1;
 }

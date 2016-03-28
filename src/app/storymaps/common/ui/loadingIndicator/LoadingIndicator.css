@@ -50,6 +50,7 @@
 	margin-top: -5px;
 }
 
+#loadingMessage #loadingRetry:focus,
 #loadingMessage #loadingRetry:hover {
 	opacity: 1.0;
 }
