@@ -498,12 +498,10 @@ define(["lib-build/tpl!./MainMediaContainerMap",
 				setMapControlsColor();
 				
 				//app.data.debug();
-				
-				if( WebApplicationData.getLayoutId() == "float" )
-					app.map.disableKeyboardNavigation();
-				else
-					app.map.enableKeyboardNavigation();
-				
+
+				// default map keyboard navigation is broken WRT to accessibility; turn it off
+				app.map.disableKeyboardNavigation();
+
 				try {
 					app.map.resize();
 					app.map.reposition();
