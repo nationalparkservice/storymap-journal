@@ -92,8 +92,8 @@ define(["dojo/Deferred", "esri/urlUtils"],
 					},
 					function(response)
 					{
-						if( ! response || ! response || ! response.data.url ) 
-							resultDeferred.reject();
+						if( ! response || ! response.data || ! response.data.url )
+							resultDeferred.reject(response ? response.status_txt : "No Response");
 						else
 							resultDeferred.resolve(response.data.url);
 					}
