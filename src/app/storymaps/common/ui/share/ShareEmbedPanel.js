@@ -103,9 +103,7 @@ define([
 					clipboard.setData("text/plain", container.find(".embedTextarea").val());
 					container.find(".share-btn").removeClass('share-clipboard').addClass('share-ok');
 					container.find(".share-status").show();
-					container.find(".embedTextarea")[0].selectionStart = container.find(".embedTextarea")[0].selectionEnd = -1;
-					
-					container.find(".bitlylink").focus();
+
 					setTimeout(function(){
 						container.find(".share-btn").addClass('share-clipboard').removeClass('share-ok');
 						container.find(".share-status").hide();
