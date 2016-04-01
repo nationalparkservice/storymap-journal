@@ -115,9 +115,8 @@ define([
 			
 			function initEvents()
 			{
-				container.find(".embedTextarea").click(function(){
-					this.setSelectionRange(0, this.value.length);
-				});
+				var selectAll = function(){ this.setSelectionRange(0, this.value.length);};
+				container.find(".embedTextarea").click(selectAll).focus(selectAll);
 			}
 		};
 	}

@@ -89,9 +89,8 @@ define([
 			
 			function initEvents()
 			{
-				container.find(".bitlylink").click(function(){
-					this.setSelectionRange(0, this.value.length);
-				});
+				var selectAll = function(){ this.setSelectionRange(0, this.value.length);};
+				_linkField.click(selectAll).focus(selectAll);
 			}
 		};
 	}
