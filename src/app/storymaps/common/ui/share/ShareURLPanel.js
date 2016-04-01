@@ -38,7 +38,7 @@ define([
 			
 			this.focus = function()
 			{
-				_linkField.select();
+				_linkField.focus();
 			};
 			
 			this.setAutoplay = function(isAutoplay)
@@ -61,7 +61,7 @@ define([
 				SocialSharing.requestBitly(url).then(function(shortURL){
 					_linkField.val(shortURL);
 					if ( selectUrl === undefined || selectUrl === true ) {
-						_linkField.select();
+						_linkField.focus();
 					}
 				});
 				
