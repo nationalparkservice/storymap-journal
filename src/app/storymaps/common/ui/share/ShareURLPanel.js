@@ -74,7 +74,7 @@ define([
 				
 				bitLyCopy.on("copy", function (event) {
 					var clipboard = event.clipboardData;
-					clipboard.setData("text/plain", container.find(".bitlylink").val());
+					clipboard.setData("text/plain", _linkField.val());
 					container.find(".share-btn").removeClass('share-clipboard').addClass('share-ok');
 					container.find(".share-status").show();
 
