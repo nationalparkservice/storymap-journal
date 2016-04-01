@@ -78,16 +78,12 @@ define(["dojo/Deferred", "esri/urlUtils"],
 			*/
 			requestBitly: function (url)
 			{
-				var bitlyUrls = [
-						"http://api.bitly.com/v3/shorten?callback=?", 
-						"https://api-ssl.bitly.com/v3/shorten?callback=?"
-					],
-					bitlyUrl = location.protocol == 'http:' ? bitlyUrls[0] : bitlyUrls[1],
+				var
 					targetUrl = url || document.location.href,
 					resultDeferred = new Deferred();
 				
 				$.getJSON(
-					bitlyUrl, 
+					"https://api-ssl.bitly.com/v3/shorten?callback=?",
 					{ 
 						"format": "json",
 						"apiKey": app.cfg.HEADER_SOCIAL.bitly.key,
