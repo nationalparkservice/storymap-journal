@@ -142,14 +142,7 @@ define([
 					);
 				});
 				*/
-				container.find(".share_bitly").off('click').click(function(){
-					if ( $(this).hasClass("disabled") )
-						return;
-					
-					var url = $(this).data('url') || document.location.href;
-					_shareDialog.present(SocialSharing.cleanURL(url, true));
-				});
-				
+
 				// Bind keyboard enter to click
 				container.find(".shareIcon, .share-all").off('keypress').keypress(function (e) {
 					if ( $(this).hasClass("disabled") )

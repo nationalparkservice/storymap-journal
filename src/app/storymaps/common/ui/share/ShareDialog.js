@@ -23,6 +23,12 @@ define([
 				_shareURLPanel.focus();
 			});
 			
+			container.on('show.bs.modal', function (event) {
+				var button = $(event.relatedTarget); // Button that triggered the modal
+				var url = button.data('url') || document.location.href;
+				prepareDialog(SocialSharing.cleanURL(url, true));
+			});
+
 			container.find('.autoplay-checkbox').change(function(){
 				_shareURLPanel.setAutoplay(!! this.checked);
 				_shareEmbedPanel.setAutoplay(!! this.checked);
@@ -34,8 +40,13 @@ define([
 					container.find(".autoplay-notification").fadeOut();
 				}, 1000);
 			});
+
+			this.present = function(url, socialOptions) {
+				prepareDialog(url, socialOptions);
+				container.modal({keyboard: true});
+			};
 			
-			this.present = function(url, socialOptions)
+			function prepareDialog(url, socialOptions)
 			{
 				socialOptions = socialOptions || {
 					facebook: false,
@@ -62,8 +73,7 @@ define([
 				
 				container.find('.autoplay-checkbox').prop("checked", false);
 				
-				container.modal({ keyboard:true });
-			};
+			}
 			
 			function createSocialbuttons(socialOptions)
 			{
