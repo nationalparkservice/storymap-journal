@@ -109,19 +109,3 @@
 	color: #c43d40;
 	font-weight: bold;
 }
-
-/*
- * Borderless close/cancel button
- */
-
-.btn-naked {
-	border: 0;
-	color: #428BC9;
-	outline: none !important;
-	background-color: transparent;
-	box-shadow: none !important;
-}
-
-.btn-naked:hover {
-	color: #3276b1;
-}
