@@ -339,11 +339,130 @@
 				 * Custom Javascript to be executed while the application is initializing goes here
 				 */
 				
+				function addKeyNavigationToNavigationControls() {
+					var swipperSelectors = $('.navDots').find('.navDotsNav, .dot');
+					addButtonFeaturesToButtonLikeElements(swipperSelectors);
+					//hide tooltips when clicking on navigation control
+					//tooltips get shown when control gets focus - good for keyboard users, but not for mouse users
+					swipperSelectors.on('click', function(e) {
+						$(e.target).tooltip('hide');
+						setTimeout(function() {$('.section.active .title').focus()},10);
+					});
+					//Make the section title focusable, but only programatically
+					$('.section .title').attr('tabindex', '-1');
+					//TODO: Add arrow keys to .navDot
+					//This is complicated, because they are not all siblings, and tooltips are injected as siblings in the DOM
+					// so $(e.target).next().focus()  does not work
+				}
+
+				function escapeKeyDefaultsToNavigationControl() {
+					$('body').on('keydown', function (e) {
+						if (e.keyCode === 27) {  //escape
+							$('div.dot.active').focus();
+							//return false;  // The key handler for colorbox will need to see this as well.
+						}
+					});
+				}
+
+				function addButtonFeaturesToButtonLikeElements($selection)
+				{
+					$selection
+						.attr("tabindex", "0")
+						.attr("role", "button")
+						.on('keydown', function (e) {
+							if (e.keyCode === 32 || e.keyCode === 13) {
+								$(e.target).click();
+								return false;
+							}
+						})
+						.each(function() {
+							var title = $(this).attr('title');
+							if (title) {$(this).attr('aria-label', title)}
+						});
+				}
+
+				function addRefocusEventsToAvoidLostFocus() {
+					//Scroll for more
+					$('div.scrollInner').on('keydown', function (e) {
+						if (e.keyCode === 13) {
+							$('div.dot[data-index="1"]').focus();
+							return false;
+						}
+					});
+					//Scroll before first
+					//var controlElement = $('div.navDotsUp')
+					$('div.navDotsUp').on('blur', function (e) {
+						if ($(e.target).hasClass('disabled')) {
+							$('div.dots :first-child').focus();
+						}
+					});
+					//Scroll after last
+					//controlElement = $('div.navDotsDown')
+					$('div.navDotsDown').on('blur', function (e) {
+						if ($(e.target).hasClass('disabled')) {
+							$('div.dots :last-child').focus();
+						}
+					});
+				}
+
+				function makeHeaderElementsFirstInTabOrder()
+				{
+					$('.header').find('a, button, [tabindex]').attr('tabindex', '1');
+					//TODO:  If image in .header a.logoLink has display:none, link still gets focus, but it is off screen
+					//Not a high priority, because we will always show the image
+				}
+
+				function addSkipMainStageAtSectionBottom() {
+					var skippy = $('<a id="skippy" class="sr-only sr-only-focusable" href="#"><div class="container"><span class="skiplink-text">Skip Main Stage</span></div></a>');
+					skippy.click(function() {
+						$('.section.active + .section').find('.title').focus().get(0).scrollIntoView();
+					});
+					var sections = $('.section > .social');
+					var sectionCount = sections.length;
+					sections.filter(function(index) {
+						var isNotLastSection = index < sectionCount - 1;
+						var isNotImage = app.data.getStoryByIndex(index).media.type != 'image';
+						return isNotImage && isNotLastSection;
+					}).after(skippy);
+				}
+
+				function removeNavigationFromInactiveSections() {
+					$('div.section').not('.active').find('a, .btn-fullscreen, .shareIcon').attr('tabindex', '-1');
+					var $active = $('div.section.active');
+					$active.find('a').removeAttr('tabindex');
+					$active.find('.btn-fullscreen, .shareIcon').attr('tabindex', '0');
+				}
+
 				// The application is ready
 				topic.subscribe("tpl-ready", function(){
 					/*
 					 * Custom Javascript to be executed when the application is ready goes here
 					 */
+
+					addKeyNavigationToNavigationControls();
+					escapeKeyDefaultsToNavigationControl();
+
+					// The 'scroll to see more' control $('.scrollInner') does not need key focus, just go straight to Nav controls
+
+					// Add key navigation to social links
+					addButtonFeaturesToButtonLikeElements($('.share_facebook, .share_twitter'));  //.share_bitly already a button
+
+					// Add key control to image 'view-fullsize' control
+					var viewImageFullsizeControl = $('.image-wrapper .btn-fullscreen');
+					addButtonFeaturesToButtonLikeElements(viewImageFullsizeControl);
+
+					// Add key control to all mobile controls (needed for embed mode)
+					addButtonFeaturesToButtonLikeElements($('#mobileView').find('p.help-embed, div.embed-btn, span.embed-btn2'));
+
+					addRefocusEventsToAvoidLostFocus();
+
+					makeHeaderElementsFirstInTabOrder();
+
+					addSkipMainStageAtSectionBottom();
+
+					removeNavigationFromInactiveSections();
+					topic.subscribe("story-navigated-to-section", removeNavigationFromInactiveSections);
+
 				});
 			});
 		</script>
