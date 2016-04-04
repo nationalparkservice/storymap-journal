@@ -5,9 +5,10 @@ define(["lib-build/css!./MapCommand",
 		"esri/symbols/PictureMarkerSymbol",
 		"esri/layers/GraphicsLayer",
 		"esri/graphic",
-		"esri/config"
+		"esri/config",
+	  "./KeyNavigation"
 	], 
-	function(viewCss, has, Point, on, PictureMarkerSymbol, GraphicsLayer, Graphic, esriConfig)
+	function(viewCss, has, Point, on, PictureMarkerSymbol, GraphicsLayer, Graphic, esriConfig, KeyNav)
 	{
 		/**
 		 * MapCommand
@@ -148,6 +149,8 @@ define(["lib-build/css!./MapCommand",
 			
 			// Use bigger icon on touch devices
 			this.setMobile(!! has('touch'));
+
+			KeyNav.addKeyNavigationToMap(map);
 		};
 	}
 );

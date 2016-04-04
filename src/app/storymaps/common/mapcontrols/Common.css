@@ -118,3 +118,9 @@
 	margin-top: 0;
 	margin-bottom: 4px;
 }
+
+.esriSimpleSliderIncrementButton:focus,
+.esriSimpleSliderDecrementButton:focus {
+	background-color: #eee;
+	outline: none;  /* remove to display the default focus ring (improves contrast/accessibility) */
+}
