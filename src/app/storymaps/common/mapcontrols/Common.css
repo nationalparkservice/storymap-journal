@@ -22,10 +22,8 @@
 
 .mapControls .collapseBtn {
 	display: inline-block;
-	width: 18px;
-	height: 9px;
 	font-size: 16px;
-	vertical-align: -3px;
+	outline: none; /* remove to display the default focus ring (improves contrast/accessibility) */
 }
 
 .mapControls .glyphicon-chevron-up,
@@ -34,8 +32,7 @@
 	opacity: 0.6;
 }
 
-.mapControls .glyphicon-chevron-up:focus,
-.mapControls .glyphicon-chevron-down:focus,
+.mapControls .collapseBtn:focus > .glyphicon,
 .mapControls .glyphicon-chevron-up:hover,
 .mapControls .glyphicon-chevron-down:hover {
 	opacity: 1.0;
