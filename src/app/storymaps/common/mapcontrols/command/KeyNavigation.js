@@ -35,7 +35,7 @@ define([], function () {
 
   function mapKeyboardHandler(e)
   {
-    if (! app.map) {return}
+    if (! app.map) {return;}
     var panPercent = e.shiftKey ? 0.25 : 0.05;
     switch(e.keyCode) {
       case 36: //home = zoom original extents
@@ -67,7 +67,7 @@ define([], function () {
 
   function addKeyNavigationToMap(map) {
     //Only do this once per map.
-    if (_initializedMaps.hasOwnProperty(map.id)) {return}
+    if (_initializedMaps.hasOwnProperty(map.id)) {return;}
     _initializedMaps[map.id] = true;
 
     map.disableKeyboardNavigation();

@@ -6,7 +6,7 @@ define(["lib-build/css!./MapCommand",
 		"esri/layers/GraphicsLayer",
 		"esri/graphic",
 		"esri/config",
-	  "./KeyNavigation"
+		"./KeyNavigation"
 	], 
 	function(viewCss, has, Point, on, PictureMarkerSymbol, GraphicsLayer, Graphic, esriConfig, KeyNav)
 	{

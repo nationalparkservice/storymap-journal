@@ -120,7 +120,7 @@ define(["dojo/topic",
 			$.colorbox({
 				href: imgNode.attr('src'),
 				//returnFocus: only works when colorbox is launched from an anchor element; this is a workaround
-				onClosed: function() { setTimeout(function() {e.target.focus()}, 0) },
+				onClosed: function() { setTimeout(function() {e.target.focus();}, 0); },
 				photo: true,
 				title: imgNode.parents('figure').find('figcaption').html() || imgNode.attr('title'),
 				scalePhotos: true, 
