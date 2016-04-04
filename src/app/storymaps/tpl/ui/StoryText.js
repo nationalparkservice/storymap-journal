@@ -130,6 +130,7 @@ define(["dojo/topic",
 			
 			setTimeout(function(){
 				_fullScreenMediaIsOpening = false;
+				//$('#cboxClose').focus(); //uncomment to default with focus on close button
 			}, 800);
 		}
 		
