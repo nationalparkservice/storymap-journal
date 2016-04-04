@@ -6,7 +6,8 @@ define([
 		SocialSharing,
 		ShareDialog
 	){
-		var _shareDialog = new ShareDialog($("#shareDialog"));
+		//reference to ShareDialog is unused, and not needed as it is tracked in the DOM
+		new ShareDialog($("#shareDialog"));
 		
 		function resizeLinkContainer(container)
 		{
