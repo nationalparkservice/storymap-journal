@@ -42,11 +42,11 @@ app.cfg = {
 			positions: ["left", "right"],
 			themes: [
 				{name: "side-default-1", themeMajor: "white", dotNav: "#777777", panel: "#FFFFFF", media: "#EEEEEE", text: "#000000", textLink: "#555", softText: "#c0c0c0", softBtn: "#444",    esriLogo: "black"},
-				{name: "side-default-2", themeMajor: "white", dotNav: "#726458", panel: "#FFF8E9", media: "#C9C1B9", text: "#000000", textLink: "#555", softText: "#c0c0c0", softBtn: "#444",    esriLogo: "black"},
-				{name: "side-default-3", themeMajor: "white", dotNav: "#676C7F", panel: "#F9F9EF", media: "#424D51", text: "#000000", textLink: "#555", softText: "#c0c0c0", softBtn: "#aaa",    esriLogo: "black"},
-				{name: "side-default-4", themeMajor: "black", dotNav: "#5A5A5A", panel: "#000000", media: "#EEEEEE", text: "#FFFFFF", textLink: "#DDD", softText: "#FFF",    softBtn: "#AAA",    esriLogo: "white"},
-				{name: "side-default-5", themeMajor: "white", dotNav: "#68AAE1", panel: "#FFFFFF", media: "#E8E8DF", text: "#000000", textLink: "#555", softText: "#FFF",    softBtn: "#4D4D4D", esriLogo: "black"},
-				{name: "side-default-6", themeMajor: "white", dotNav: "#676C7E", panel: "#F9F9EF", media: "#C2E3EE", text: "#000000", textLink: "#555", softText: "#c0c0c0", softBtn: "#AAA",    esriLogo: "black"}
+				{name: "side-default-2", themeMajor: "white", dotNav: "#5e7630", panel: "#cbcdcc", media: "#afbd8e", text: "#000000", textLink: "#555", softText: "#cbcdcc", softBtn: "#cbcdcc",    esriLogo: "black"},
+				{name: "side-default-3", themeMajor: "white", dotNav: "#575b59", panel: "#cbcdcc", media: "#afb2b0", text: "#000000", textLink: "#555", softText: "#cbcdcc", softBtn: "#cbcdcc",    esriLogo: "black"},
+				{name: "side-default-4", themeMajor: "white", dotNav: "#958962", panel: "#cbcdcc", media: "#c8c1ab", text: "#000000", textLink: "#555", softText: "#cbcdcc", softBtn: "#cbcdcc",    esriLogo: "black"},
+				{name: "side-default-5", themeMajor: "white", dotNav: "#8f8c7a", panel: "#cbcdcc", media: "#c0beb4", text: "#000000", textLink: "#555", softText: "#cbcdcc", softBtn: "#cbcdcc", esriLogo: "black"},
+				{name: "side-default-6", themeMajor: "white", dotNav: "#d1b669", panel: "#cbcdcc", media: "#ddc990", text: "#000000", textLink: "#555", softText: "#555", softBtn: "#555",    esriLogo: "black"}
 			]
 		},
 		{
