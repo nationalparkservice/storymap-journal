@@ -6,6 +6,10 @@
 	vertical-align: 0px;
 }
 
+.sidePanel .shareIcon {
+	color: #777;
+}
+
 .shareIcon.active {
 	display: inline-block;
 }
@@ -19,6 +23,12 @@
 	margin-left: 4px;
 }
 
+.sidePanel .shareIcon:focus,
+.sidePanel .shareIcon:hover {
+	color: black;
+}
+
+.shareIcon:focus,
 .shareIcon:hover {
 	color: #ACACAC;
 }
