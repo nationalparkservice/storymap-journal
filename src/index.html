@@ -427,11 +427,6 @@
 					}).after(skippy);
 				}
 
-				function removeNavigationFromInactiveSections() {
-					$('div.section').not('.active').find('a, .btn-fullscreen, .shareIcon').attr('tabindex', '-1');
-					var $active = $('div.section.active');
-					$active.find('a').removeAttr('tabindex');
-					$active.find('.btn-fullscreen, .shareIcon').attr('tabindex', '0');
 				}
 
 				// The application is ready
@@ -464,8 +459,6 @@
 
 					addSkipMainStageAtSectionBottom();
 
-					removeNavigationFromInactiveSections();
-					topic.subscribe("story-navigated-to-section", removeNavigationFromInactiveSections);
 
 				});
 			});
