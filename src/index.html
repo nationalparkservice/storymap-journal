@@ -448,6 +448,9 @@
 					// Add key navigation to social links
 					addButtonFeaturesToButtonLikeElements($('.share_facebook, .share_twitter'));  //.share_bitly already a button
 
+					// Add key navigation to main stage actions (these anchor elements have no href)
+					addButtonFeaturesToButtonLikeElements($('a[data-storymaps]'));
+
 					// Add key control to image 'view-fullsize' control
 					var viewImageFullsizeControl = $('.image-wrapper .btn-fullscreen');
 					addButtonFeaturesToButtonLikeElements(viewImageFullsizeControl);
