@@ -414,6 +414,7 @@
 
 				function addSkipMainStageAtSectionBottom() {
 					var skippy = $('<a id="skippy" class="sr-only sr-only-focusable" href="#"><div class="container"><span class="skiplink-text">Skip Main Stage</span></div></a>');
+					$('.section .title').css('outline','none');  // do not show the focus ring on this non-interactive elements
 					skippy.click(function() {
 						$('.section.active + .section').find('.title').focus().get(0).scrollIntoView();
 					});
