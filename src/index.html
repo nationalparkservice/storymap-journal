@@ -406,14 +406,6 @@
 				}
 
 				function addRefocusEventsToAvoidLostFocus() {
-					//Scroll for more
-					$('div.scrollInner').on('keydown', function (e) {
-						if (e.keyCode === 13) {
-							$('div.dot[data-index="1"]').focus();
-							return false;
-						}
-					});
-					//TODO: Test with NavGroups
 					//Scroll before first
 					//var controlElement = $('div.navDotsUp')
 					$('div.navDotsUp').on('blur', function (e) {
