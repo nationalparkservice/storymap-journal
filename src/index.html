@@ -351,9 +351,7 @@
 					//Make the section title focusable, but only programatically
 					// do not show the focus ring on this non-interactive elements
 					$('.section .title').attr('tabindex', '-1').css('outline', 'none');
-					//TODO: Add arrow keys to .navDot
-					//This is complicated, because they are not all siblings, and tooltips are injected as siblings in the DOM
-					// so $(e.target).next().focus()  does not work
+
 					addArrowKeysToNavControl();
 				}
 
@@ -415,6 +413,7 @@
 							return false;
 						}
 					});
+					//TODO: Test with NavGroups
 					//Scroll before first
 					//var controlElement = $('div.navDotsUp')
 					$('div.navDotsUp').on('blur', function (e) {
