@@ -354,6 +354,31 @@
 					//TODO: Add arrow keys to .navDot
 					//This is complicated, because they are not all siblings, and tooltips are injected as siblings in the DOM
 					// so $(e.target).next().focus()  does not work
+					addArrowKeysToNavControl();
+				}
+
+				function addArrowKeysToNavControl() {
+					var $container = $('.navDotsInner');
+					$container.on('keydown', function (e) {
+						if (e.keyCode !== 38 && e.keyCode !== 40) {
+							return;
+						} //Up and down arrow keys
+						var delta = (e.keyCode === 38) ? -1 : 1;
+						var $focusableElements = $container.find('[tabindex]').not('.disabled');
+						var currentIndex = $focusableElements.index(document.activeElement);
+						if (currentIndex === -1) {
+							return;
+						}
+						var newIndex = currentIndex + delta;
+						if (newIndex < 0) {
+							newIndex = 0;
+						}
+						if ($focusableElements.length <= newIndex) {
+							newIndex = $focusableElements.length - 1;
+						}
+						$focusableElements.eq(newIndex).focus();
+						return false;
+					});
 				}
 
 				function escapeKeyDefaultsToNavigationControl() {
