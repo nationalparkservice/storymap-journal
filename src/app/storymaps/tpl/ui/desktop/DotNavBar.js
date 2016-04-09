@@ -1,8 +1,10 @@
 define([
+				"dojo/topic",
         "lib-build/css!./DotNavBar",
         "storymaps/common/utils/CommonHelper"
     ],
 	function(
+		topic,
 		viewCss,
 		CommonHelper
 	){
@@ -143,6 +145,8 @@ define([
 				setColor();
 				
 				_this.setActive(sectionIndex);
+
+				topic.publish("story-navigation-control-update");
 			}
 			
 			function setColor()

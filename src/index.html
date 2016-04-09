@@ -340,7 +340,7 @@
 				 */
 				
 				function addKeyNavigationToNavigationControls() {
-					var swipperSelectors = $('.navDots').find('.navDotsNav, .dot');
+					var swipperSelectors = $('.navDots').find('.navDotsNav, .dot, .navGroup');
 					addButtonFeaturesToButtonLikeElements(swipperSelectors);
 					//hide tooltips when clicking on navigation control
 					//tooltips get shown when control gets focus - good for keyboard users, but not for mouse users
@@ -436,6 +436,7 @@
 					 */
 
 					addKeyNavigationToNavigationControls();
+					topic.subscribe("story-navigation-control-update", addKeyNavigationToNavigationControls);
 					escapeKeyDefaultsToNavigationControl();
 
 					// The 'scroll to see more' control $('.scrollInner') does not need key focus, just go straight to Nav controls
