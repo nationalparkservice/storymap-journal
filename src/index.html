@@ -443,6 +443,14 @@
 					}).after(skippy);
 				}
 
+				function addKeyNavigationAlert() {
+					var notice = $('<p id="keyNavNotice" class="sr-only sr-only-focusable" tabindex="1">Use the escape key at anytime to jump to the navigation controls.</p>');
+					notice.css('padding', '3px').css('margin-left', '15px').css('outline', 'none');
+					notice.blur(function() {
+						//notice.removeAttr("tabindex");
+						notice.remove();
+					});
+					$('body').prepend(notice)
 				}
 
 				// The application is ready
@@ -476,7 +484,7 @@
 
 					addSkipMainStageAtSectionBottom();
 
-
+					addKeyNavigationAlert();
 				});
 			});
 		</script>
