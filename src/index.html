@@ -429,18 +429,18 @@
 					//Not a high priority, because we will always show the image
 				}
 
-				function addSkipMainStageAtSectionBottom() {
-					var skippy = $('<a id="skippy" class="sr-only sr-only-focusable" href="#"><div class="container"><span class="skiplink-text">Skip Main Stage</span></div></a>');
+				function addJumpToMainStageAtBottomOfActiveSection(index) {
+					$('#skipper').remove();
+					var mediatype = app.data.getStoryByIndex(index).media.type;
+					if (mediatype === 'image') return;
+					if (app.data.getStoryLength()-1 <= index) return;
+					var skippy = $('<a id="skipper" class="media-skipper sr-only sr-only-focusable" href="#"><span class="skiplink-text">Jump to ' + mediatype + '</span></a>');
 					skippy.click(function() {
-						$('.section.active + .section').find('.title').focus().get(0).scrollIntoView();
+						$('#mainStagePanel').find('.mainMediaContainer.active')
+								.find('a[href], [tabindex], button, input, textarea, select, object, iframe')
+								.filter(':visible:first').focus();
 					});
-					var sections = $('.section > .social');
-					var sectionCount = sections.length;
-					sections.filter(function(index) {
-						var isNotLastSection = index < sectionCount - 1;
-						var isNotImage = app.data.getStoryByIndex(index).media.type != 'image';
-						return isNotImage && isNotLastSection;
-					}).after(skippy);
+					$('.section.active .social').after(skippy);
 				}
 
 				function addKeyNavigationAlert() {
@@ -482,7 +482,8 @@
 
 					makeHeaderElementsFirstInTabOrder();
 
-					addSkipMainStageAtSectionBottom();
+					addJumpToMainStageAtBottomOfActiveSection(0);
+					topic.subscribe('story-navigated-to-section', addJumpToMainStageAtBottomOfActiveSection);
 
 					addKeyNavigationAlert();
 				});
