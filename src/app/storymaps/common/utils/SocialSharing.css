@@ -6,6 +6,10 @@
 	vertical-align: 0px;
 }
 
+.sidePanel .header .shareIcon {
+	color: white;
+}
+
 .sidePanel .shareIcon {
 	color: #777;
 }
@@ -21,6 +25,11 @@
 
 .shareBtns > .shareIcon ~ .shareIcon {
 	margin-left: 4px;
+}
+
+.sidePanel .header .shareIcon:focus,
+.sidePanel .header .shareIcon:hover {
+	color: #CECECE;
 }
 
 .sidePanel .shareIcon:focus,

@@ -1,19 +1,26 @@
 /*
  * Header
  */
+.sidePanel .header {
+	color: white;
+	background-color: black;
+}
 
-.header .link,
 .sectionPanel .linkContainer {
 	color: #CECECE;
 }
 
-.sidePanel .header .link,
 .sectionPanel.sidePanel .linkContainer {
 	color: #555;
 }
 
-.header .link {
+.sidePanel .header .link:hover {
+	color: white;
+}
+
+.sidePanel .header .link {
 	font-weight: 400;
+	color: white;
 }
 
 /**********************
@@ -86,8 +93,7 @@
 	display: block;
 	max-height: 0;
 	text-align: left;
-	margin-top: -6px;
-	padding: 0 25px 4px 25px;
+	padding: 0 25px 0 25px;
 	transition: max-height .3s;
 	overflow: hidden;
 	visibility: hidden;
