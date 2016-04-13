@@ -6,6 +6,7 @@
 	vertical-align: 0px;
 }
 
+#floatingPanel .header .shareIcon,
 .sidePanel .header .shareIcon {
 	color: white;
 }
@@ -27,6 +28,8 @@
 	margin-left: 4px;
 }
 
+#floatingPanel .header .shareIcon:focus,
+#floatingPanel .header .shareIcon:hover,
 .sidePanel .header .shareIcon:focus,
 .sidePanel .header .shareIcon:hover {
 	color: #CECECE;

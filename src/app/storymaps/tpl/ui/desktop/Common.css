@@ -1,6 +1,7 @@
 /*
  * Header
  */
+#floatingPanel .header,
 .sidePanel .header {
 	color: white;
 	background-color: black;
@@ -14,10 +15,12 @@
 	color: #555;
 }
 
+.floatingPanel .header .link:hover,
 .sidePanel .header .link:hover {
 	color: white;
 }
 
+.floatingPanel .header .link,
 .sidePanel .header .link {
 	font-weight: 400;
 	color: white;
