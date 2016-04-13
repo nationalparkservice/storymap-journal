@@ -42,11 +42,11 @@ app.cfg = {
 			positions: ["left", "right"],
 			themes: [
 				{name: "side-default-1", themeMajor: "white", dotNav: "#777777", panel: "#FFFFFF", media: "#EEEEEE", text: "#000000", textLink: "#555", softText: "#c0c0c0", softBtn: "#444",    esriLogo: "black"},
-				{name: "side-default-2", themeMajor: "white", dotNav: "#5e7630", panel: "#cbcdcc", media: "#afbd8e", text: "#000000", textLink: "#555", softText: "#cbcdcc", softBtn: "#cbcdcc",    esriLogo: "black"},
-				{name: "side-default-3", themeMajor: "white", dotNav: "#575b59", panel: "#cbcdcc", media: "#afb2b0", text: "#000000", textLink: "#555", softText: "#cbcdcc", softBtn: "#cbcdcc",    esriLogo: "black"},
-				{name: "side-default-4", themeMajor: "white", dotNav: "#958962", panel: "#cbcdcc", media: "#c8c1ab", text: "#000000", textLink: "#555", softText: "#cbcdcc", softBtn: "#cbcdcc",    esriLogo: "black"},
-				{name: "side-default-5", themeMajor: "white", dotNav: "#8f8c7a", panel: "#cbcdcc", media: "#c0beb4", text: "#000000", textLink: "#555", softText: "#cbcdcc", softBtn: "#cbcdcc", esriLogo: "black"},
-				{name: "side-default-6", themeMajor: "white", dotNav: "#d1b669", panel: "#cbcdcc", media: "#ddc990", text: "#000000", textLink: "#555", softText: "#555", softBtn: "#555",    esriLogo: "black"}
+				{name: "side-default-2", themeMajor: "white", dotNav: "#7b9a3f", panel: "#d8dad9", media: "#afbd8e", text: "#000000", textLink: "#555", softText: "#191919", softBtn: "#191919",    esriLogo: "black"},
+				{name: "side-default-3", themeMajor: "white", dotNav: "#575b59", panel: "#d8dad9", media: "#afb2b0", text: "#000000", textLink: "#555", softText: "#d2d2d2", softBtn: "#d2d2d2",    esriLogo: "black"},
+				{name: "side-default-4", themeMajor: "white", dotNav: "#958962", panel: "#d8dad9", media: "#c8c1ab", text: "#000000", textLink: "#555", softText: "#191919", softBtn: "#191919",    esriLogo: "black"},
+				{name: "side-default-5", themeMajor: "white", dotNav: "#8f8c7a", panel: "#d8dad9", media: "#c0beb4", text: "#000000", textLink: "#555", softText: "#191919", softBtn: "#191919", esriLogo: "black"},
+				{name: "side-default-6", themeMajor: "white", dotNav: "#d1b669", panel: "#d8dad9", media: "#ddc990", text: "#000000", textLink: "#555", softText: "#191919", softBtn: "#191919",    esriLogo: "black"}
 			]
 		},
 		{
@@ -56,7 +56,7 @@ app.cfg = {
 			sizes: { small: '25%', medium: '35%', large: '45%' },
 			positions: ["right", "left"],
 			themes: [
-				{name: "float-default-1", themeMajor: "black", dotNav: "#000000", panel: "#000000", media: "#FFFFFF", text: "#FFFFFF", textLink: "#DDD", softText: "#FFF",    softBtn: "#AAA", esriLogo: "white"}
+				{name: "float-default-1", themeMajor: "black", dotNav: "#000000", panel: "#000000", media: "#FFFFFF", text: "#FFFFFF", textLink: "#DDD", softText: "#CCC",    softBtn: "#CCC", esriLogo: "white"}
 			]
 		}
 	],
