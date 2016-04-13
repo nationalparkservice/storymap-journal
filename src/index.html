@@ -429,6 +429,11 @@
 					$('.header').find('a[href], button, [tabindex]').filter(':visible').attr('tabindex', '1');
 				}
 
+				function makeNavigationElementsSecondInTabOrder()
+				{
+					$('.navDots').find('.navDotsNav, .dot, .navGroup').attr('tabindex', '2');
+				}
+
 				function addJumpToMainStageAtBottomOfActiveSection(index) {
 					$('#skipper').remove();
 					var mediatype = app.data.getStoryByIndex(index).media.type;
@@ -481,6 +486,9 @@
 					addRefocusEventsToAvoidLostFocus();
 
 					makeHeaderElementsFirstInTabOrder();
+
+					makeNavigationElementsSecondInTabOrder(); // Required for floatingPanel
+					topic.subscribe("story-navigation-control-update", makeNavigationElementsSecondInTabOrder);
 
 					addJumpToMainStageAtBottomOfActiveSection(0);
 					topic.subscribe('story-navigated-to-section', addJumpToMainStageAtBottomOfActiveSection);
