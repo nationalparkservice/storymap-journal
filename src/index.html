@@ -426,9 +426,7 @@
 
 				function makeHeaderElementsFirstInTabOrder()
 				{
-					$('.header').find('a, button, [tabindex]').attr('tabindex', '1');
-					//TODO:  If image in .header a.logoLink has display:none, link still gets focus, but it is off screen
-					//Not a high priority, because we will always show the image
+					$('.header').find('a[href], button, [tabindex]').filter(':visible').attr('tabindex', '1');
 				}
 
 				function addJumpToMainStageAtBottomOfActiveSection(index) {
