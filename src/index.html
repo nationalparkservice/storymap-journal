@@ -346,7 +346,9 @@
 					//tooltips get shown when control gets focus - good for keyboard users, but not for mouse users
 					swipperSelectors.on('click', function(e) {
 						$(e.target).tooltip('hide');
-						setTimeout(function() {$('.section.active .title').focus()},10);
+						setTimeout(function() {$('.section.active .title').filter(':visible').focus()},10);
+						//Swiper needs a 300+ms timeout to allow slide transition to complete
+						setTimeout(function() {$('.section.swiper-slide-active .title').filter(':visible').focus()},400);
 					});
 					//Make the section title focusable, but only programatically
 					// do not show the focus ring on this non-interactive elements
