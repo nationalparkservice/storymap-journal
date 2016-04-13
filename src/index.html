@@ -446,8 +446,8 @@
 								.find('a[href], [tabindex], button, input, textarea, select, object, iframe')
 								.filter(':visible:first').focus();
 					});
-					$('.section.active .social').filter(':visible').after(skippy);
-					$('.section.swiper-slide-active .social').filter(':visible').after(skippy);
+					$('.section.active').filter(':visible').find('.social').after(skippy);
+					$('.section.swiper-slide-active').filter(':visible').find('.social').after(skippy);
 				}
 
 				function addKeyNavigationAlert() {
