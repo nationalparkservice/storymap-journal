@@ -438,14 +438,16 @@
 					$('#skipper').remove();
 					var mediatype = app.data.getStoryByIndex(index).media.type;
 					if (mediatype === 'image') return;
-					if (app.data.getStoryLength()-1 <= index) return;
+					var inSidePanel = $('#sidePanel').filter(':visible').length > 0;
+					if (inSidePanel && app.data.getStoryLength()-1 <= index) return;
 					var skippy = $('<a id="skipper" class="media-skipper sr-only sr-only-focusable" href="#"><span class="skiplink-text">Jump to ' + mediatype + '</span></a>');
 					skippy.click(function() {
 						$('#mainStagePanel').find('.mainMediaContainer.active')
 								.find('a[href], [tabindex], button, input, textarea, select, object, iframe')
 								.filter(':visible:first').focus();
 					});
-					$('.section.active .social').after(skippy);
+					$('.section.active .social').filter(':visible').after(skippy);
+					$('.section.swiper-slide-active .social').filter(':visible').after(skippy);
 				}
 
 				function addKeyNavigationAlert() {
