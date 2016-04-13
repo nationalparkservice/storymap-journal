@@ -22,7 +22,7 @@ define(["lib-build/css!./MapCommand",
 			// Home/wait button
 			//
 			var tsUpdateStart = 0;
-			var homeButton = $('<div class="esriSimpleSliderIncrementButton"><div class="mapCommandHomeBtn"></div></div>');
+			var homeButton = $('<div class="esriSimpleSliderIncrementButton"><span class="fa fa-home" title="Reset Map Extents" aria-hidden="true"></span><span class="sr-only">Reset Map Extents</span></div>');
 			var locateSymbol = new PictureMarkerSymbol('app/storymaps/common/_resources/icons/mapcommand-location-marker.png', 21, 21);
 			var locateLayer = new GraphicsLayer({id: 'locateLayer'});
 			
@@ -77,7 +77,7 @@ define(["lib-build/css!./MapCommand",
 			function toggleLoadingStatus(start)
 			{
 				if( start ) {
-					$(map.container).find('.mapCommandHomeBtn').addClass('loading');
+					$(map.container).find('.mapCommandHomeBtn').removeClass('fa-home').addClass('fa-spinner').addClass('fa-pulse');
 					tsUpdateStart = Date.now();
 				}
 				else {
@@ -88,7 +88,7 @@ define(["lib-build/css!./MapCommand",
 						delay = 450 - elapsed;
 	
 					setTimeout(function(){
-						$(map.container).find('.mapCommandHomeBtn').removeClass('loading');
+						$(map.container).find('.mapCommandHomeBtn').removeClass('fa-spinner').removeClass('fa-pulse').addClass('fa-home');
 						tsUpdateStart = 0;
 					}, delay);
 				}
