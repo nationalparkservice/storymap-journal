@@ -1,0 +1,57 @@
+/*
+ * NPS Styling of Map Elements
+ */
+
+.esriSimpleSlider, .arcgisSearch div.searchBtn {
+    border: 1px solid #1a2423;
+    background-color: #747571;
+    color: #FFF;
+    box-shadow: 0 0 15px #888;
+}
+
+.esriSimpleSliderDecrementButton:hover, .esriSimpleSliderIncrementButton:hover,
+.mapCommandLocation:hover, .mapCommandHomeBtn.loading:hover,
+.arcgisSearch div.searchBtn:hover,
+.esriSimpleSliderDecrementButton:focus, .esriSimpleSliderIncrementButton:focus,
+.mapCommandLocation:focus, .mapCommandHomeBtn.loading:focus,
+.arcgisSearch div.searchBtn:focus {
+    background-color: #626159;
+}
+
+.esriSimpleSlider div {
+    width: 26px;
+    height: 26px;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+.mapCommandHomeBtn {
+    background: url(../../resources/tpl/viewer/icons/mapcommand-home2.png);
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: 3px 3px;
+}
+
+.mapCommandLocation {
+    width: 28px;
+    height: 28px;
+    background: url(../../resources/tpl/viewer/icons/mapcommand-location2.png);
+    background-color: #747571;
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    background-position: 4px 4px;
+}
+
+.arcgisSearch div.searchBtn {
+    padding: 3px !important; /* equivalent styling in geocoder.css is more specific */
+}
+
+.arcgisSearch .searchGroup .searchInput {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.arcgisSearch .searchClose, .arcgisSearch .searchClear {
+    height: 24px;
+    line-height: 24px;
+}
