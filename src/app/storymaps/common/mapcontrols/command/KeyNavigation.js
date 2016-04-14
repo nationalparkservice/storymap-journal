@@ -6,7 +6,7 @@ define([], function () {
       .attr("tabindex", "0")
       .attr("role", "button")
       .on('keydown', function (e) {
-        if (e.keyCode === 32 || e.keyCode === 13) {
+        if (e.which === 32 || e.which === 13) {
           $(e.target).click();
           return false;
         }
@@ -37,7 +37,7 @@ define([], function () {
   {
     if (! app.map) {return;}
     var panPercent = e.shiftKey ? 0.25 : 0.05;
-    switch(e.keyCode) {
+    switch(e.which) {
       case 36: //home = zoom original extents
         $('.mainMediaContainer.active .esriSimpleSliderIncrementButton').get(1).click();
         return false;
@@ -53,10 +53,14 @@ define([], function () {
       case 40: //down arrow = pan down
         panMap('down', panPercent);
         return false;
-      case 187: //+/= = zoom in
+      case 107: // +   key on number pad (all browsers)
+      case 61:  // +/= key on firefox browsers
+      case 187: // +/= key on all other browsers
         app.map.setZoom(app.map.getZoom() + 1);
         return false;
-      case 189: //-/_ = zoom out
+      case 109: // -   key on number pad  (all browsers)
+      case 173: // -/_ key on firefox browsers
+      case 189: // -/_ key on all other browsers
         app.map.setZoom(app.map.getZoom() - 1);
         return false;
     }
