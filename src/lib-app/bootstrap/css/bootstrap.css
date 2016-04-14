@@ -1040,7 +1040,7 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted;
+  outline: thin dotted #000;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
