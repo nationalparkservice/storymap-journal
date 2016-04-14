@@ -39,8 +39,7 @@ define([], function () {
     var panPercent = e.shiftKey ? 0.25 : 0.05;
     switch(e.keyCode) {
       case 36: //home = zoom original extents
-        //$('div.mapCommandHomeBtn').parent().click();
-        app.map.setExtent(app.map._params.extent);
+        $('.mainMediaContainer.active .esriSimpleSliderIncrementButton').get(1).click();
         return false;
       case 37: //left arrow = pan left
         panMap('left', panPercent);
