@@ -71,7 +71,7 @@ define([
 			function buildEmbedSizeList()
 			{
 				$.each(EMBED_SIZE, function(i, size){
-					container.find('.embed-sizes').append('<li><a data-width="' + size.width + '" data-height="' + size.height + '">' + size.width + ' / ' + size.height + '</a></li>');
+					container.find('.embed-sizes').append('<li><a href="#" data-width="' + size.width + '" data-height="' + size.height + '">' + size.width + ' / ' + size.height + '</a></li>');
 				});
 				
 				container.find('.embed-sizes a').click(function(){
@@ -103,9 +103,7 @@ define([
 					clipboard.setData("text/plain", container.find(".embedTextarea").val());
 					container.find(".share-btn").removeClass('share-clipboard').addClass('share-ok');
 					container.find(".share-status").show();
-					container.find(".embedTextarea")[0].selectionStart = container.find(".embedTextarea")[0].selectionEnd = -1;
-					
-					container.find(".bitlylink").focus();
+
 					setTimeout(function(){
 						container.find(".share-btn").addClass('share-clipboard').removeClass('share-ok');
 						container.find(".share-status").hide();
@@ -115,8 +113,39 @@ define([
 			
 			function initEvents()
 			{
-				container.find(".embedTextarea").click(function(){
-					this.setSelectionRange(0, this.value.length);
+				var selectAll = function(){ this.setSelectionRange(0, this.value.length);};
+				container.find(".embedTextarea").click(selectAll).focus(selectAll);
+				addAccessibilityToDropdowns();
+			}
+
+			function addAccessibilityToDropdowns() {
+				//From: https://medium.com/@mariusc23/making-bootstrap-dropdowns-more-accessible-27b2566abdda
+				// 1 & 2. adding a couple aria-roles to help screen readers
+				// 3. setting focus on the first item in the list when the dropdown opens
+				// 4. setting focus back to the dropdown toggle when the dropdown closes
+
+				// On dropdown open
+				$(document).on('shown.bs.dropdown', function (event) {
+					var dropdown = $(event.target);
+
+					// Set aria-expanded to true
+					dropdown.find('.dropdown-menu').attr('aria-expanded', true);
+
+					// Set focus on the first link in the dropdown
+					setTimeout(function () {
+						dropdown.find('.dropdown-menu li:first-child a').focus();
+					}, 10);
+				});
+
+				// On dropdown close
+				$(document).on('hidden.bs.dropdown', function (event) {
+					var dropdown = $(event.target);
+
+					// Set aria-expanded to false
+					dropdown.find('.dropdown-menu').attr('aria-expanded', false);
+
+					// Set focus back to dropdown toggle
+					dropdown.find('.dropdown-toggle').focus();
 				});
 			}
 		};

@@ -19,12 +19,18 @@
 	margin-left: 4px;
 }
 
+.btn-naked {
+	border: 0;
+	background-color: transparent;
+	padding: 0;
+}
+
+.shareIcon:focus,
 .shareIcon:hover {
 	color: #ACACAC;
 }
 
 .share_bitly {
-	vertical-align: 1px;
 	margin-left: 2px;
 }
 .shareIcon[class^="icon-"]:before, .shareIcon[class*=" icon-"]:before {

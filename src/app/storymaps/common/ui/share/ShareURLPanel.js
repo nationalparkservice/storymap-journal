@@ -38,7 +38,7 @@ define([
 			
 			this.focus = function()
 			{
-				_linkField.select();
+				_linkField.focus();
 			};
 			
 			this.setAutoplay = function(isAutoplay)
@@ -61,7 +61,7 @@ define([
 				SocialSharing.requestBitly(url).then(function(shortURL){
 					_linkField.val(shortURL);
 					if ( selectUrl === undefined || selectUrl === true ) {
-						_linkField.select();
+						_linkField.focus();
 					}
 				});
 				
@@ -74,12 +74,10 @@ define([
 				
 				bitLyCopy.on("copy", function (event) {
 					var clipboard = event.clipboardData;
-					clipboard.setData("text/plain", container.find(".bitlylink").val());
+					clipboard.setData("text/plain", _linkField.val());
 					container.find(".share-btn").removeClass('share-clipboard').addClass('share-ok');
 					container.find(".share-status").show();
-					container.find(".bitlylink")[0].selectionStart = container.find(".bitlylink")[0].selectionEnd = -1;
-					
-					container.find(".bitlylink").focus();
+
 					setTimeout(function(){
 						container.find(".share-btn").addClass('share-clipboard').removeClass('share-ok');
 						container.find(".share-status").hide();
@@ -89,9 +87,8 @@ define([
 			
 			function initEvents()
 			{
-				container.find(".bitlylink").click(function(){
-					this.setSelectionRange(0, this.value.length);
-				});
+				var selectAll = function(){ this.setSelectionRange(0, this.value.length);};
+				_linkField.click(selectAll).focus(selectAll);
 			}
 		};
 	}
