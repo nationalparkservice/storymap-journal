@@ -76,7 +76,7 @@ define([
 			{
 				container.find('.dot').tooltip('destroy').tooltip({
 					placement: placement,
-					trigger: 'hover'
+					trigger: 'hover focus'
 				});
 			};
 			
@@ -137,7 +137,7 @@ define([
 				
 				container.find('.dot').tooltip({
 					placement: _params.tooltipPosition,
-					trigger: 'hover'
+					trigger: 'hover focus'
 				});
 				
 				setColor();

@@ -51,7 +51,6 @@ strong {
 
 img {
 	border:none;
-	outline:none;
 }
 
 textarea {
@@ -80,6 +79,7 @@ a {
 	cursor: pointer;
 }
 
+a:focus,
 a:hover{
 	text-decoration:underline;
 }

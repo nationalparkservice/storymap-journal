@@ -30,6 +30,7 @@ body.mobile-view .mapCommandHomeBtn.loading.touch {
 	background-position: 5px 5px;
 }
 
+.mapCommandHomeBtn.loading:focus,
 .mapCommandHomeBtn.loading:hover {
 	background-color: #FFFFFF;
 }

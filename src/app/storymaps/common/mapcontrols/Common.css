@@ -22,10 +22,8 @@
 
 .mapControls .collapseBtn {
 	display: inline-block;
-	width: 18px;
-	height: 9px;
 	font-size: 16px;
-	vertical-align: -3px;
+	outline: none; /* remove to display the default focus ring (improves contrast/accessibility) */
 }
 
 .mapControls .glyphicon-chevron-up,
@@ -34,6 +32,7 @@
 	opacity: 0.6;
 }
 
+.mapControls .collapseBtn:focus > .glyphicon,
 .mapControls .glyphicon-chevron-up:hover,
 .mapControls .glyphicon-chevron-down:hover {
 	opacity: 1.0;
@@ -81,6 +80,7 @@
 	user-select: none;
 }
 
+.mapControls .settingsGear:focus,
 .mapControls .settingsGear:hover {
 	opacity: 1.0;
 }
@@ -117,4 +117,10 @@
 .mapControls .settingsOverlay  .checkbox {
 	margin-top: 0;
 	margin-bottom: 4px;
+}
+
+.esriSimpleSliderIncrementButton:focus,
+.esriSimpleSliderDecrementButton:focus {
+	background-color: #eee;
+	outline: none;  /* remove to display the default focus ring (improves contrast/accessibility) */
 }

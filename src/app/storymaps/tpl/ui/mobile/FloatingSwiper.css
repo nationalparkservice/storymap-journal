@@ -145,7 +145,6 @@
 .floatingSwiper .link {
 	font-weight: 700;
 	font-size: 0.8em;
-	outline: 0;
 }
 
 .floatingSwiper .link, .floatingSwiper .shareIcon {
@@ -244,6 +243,7 @@
 	display: block;
 }
 
+.floatingSwiper .section:focus .help-embed,
 .floatingSwiper .section:hover .help-embed {
 	opacity: 1.0;
 }
@@ -279,6 +279,7 @@
 	background: url(../../../../../resources/tpl/viewer/icons/embed-arrows.png);
 }
 
+.floatingSwiper .embed-btn-container:not(.disabled):focus,
 .floatingSwiper .embed-btn-container:not(.disabled):hover {
 	opacity: 1.0;
 }
@@ -332,6 +333,7 @@
 	margin: 0 35px;
 }
 
+.floatingSwiper .embed-btn2:not(.disabled):focus,
 .floatingSwiper .embed-btn2:not(.disabled):hover {
 	opacity: 1.0;
 	cursor: pointer;

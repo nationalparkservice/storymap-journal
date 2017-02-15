@@ -32,11 +32,6 @@
 	height: 100%;
 }
 
-.sidePanel .sections:focus {
-    outline: 0;    
-    border: none;
-}
-
 .sidePanel .sections::-webkit-scrollbar { 
 	width: 20px;
 }
