@@ -91,7 +91,6 @@ define(["lib-build/css!./Desktop",
 			
 			function setColor(bgColor)
 			{
-				container.css("background-color", bgColor);
 				container.find("#builderPanel").css("background-color", bgColor);
 			}
 			

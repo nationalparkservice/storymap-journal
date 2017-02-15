@@ -83,7 +83,8 @@ app.isInBuilder = getUrlVar('edit') || getUrlVar('fromScratch') || getUrlVar('fr
 app.indexCfg = configOptions;
 
 loadCSS(app.pathJSAPI + "esri/css/esri.css", true);
-loadCSS(app.pathJSAPI + "dijit/themes/claro/claro.css", true);	
+loadCSS(app.pathJSAPI + "dijit/themes/claro/claro.css", true);
+loadCSS("//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css");
 
 if( app.isProduction ) {
 	if ( app.isInBuilder )

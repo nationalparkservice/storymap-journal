@@ -6,6 +6,15 @@
 	vertical-align: 0px;
 }
 
+#floatingPanel .header .shareIcon,
+.sidePanel .header .shareIcon {
+	color: white;
+}
+
+.sidePanel .shareIcon {
+	color: #777;
+}
+
 .shareIcon.active {
 	display: inline-block;
 }
@@ -23,6 +32,18 @@
 	border: 0;
 	background-color: transparent;
 	padding: 0;
+}
+
+#floatingPanel .header .shareIcon:focus,
+#floatingPanel .header .shareIcon:hover,
+.sidePanel .header .shareIcon:focus,
+.sidePanel .header .shareIcon:hover {
+	color: #CECECE;
+}
+
+.sidePanel .shareIcon:focus,
+.sidePanel .shareIcon:hover {
+	color: black;
 }
 
 .shareIcon:focus,

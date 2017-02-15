@@ -226,7 +226,7 @@ define(["lib-build/tpl!./ViewHeader",
 				if (logoOption == "custom")
 					loadCustomLogo();
 				else if (logoOption == "esri")
-					_contentContainer.find(".imgLogo").attr("src", "resources/tpl/viewer/icons/esri-logo.png").show();
+					_contentContainer.find(".imgLogo").attr("src", "resources/tpl/viewer/icons/nps-logo.png").show();
 			}
 			
 			this.initLocalization = function()
