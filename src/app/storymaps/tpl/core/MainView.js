@@ -638,7 +638,7 @@ define(["lib-build/css!./MainView",
 				app.ui.mobileView.showSectionNumber(index);
 				
 				$('.mediaBackContainer').hide();
-				
+
 				topic.publish('story-navigated-to-section', index);
 			}
 			

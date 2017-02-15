@@ -178,7 +178,7 @@
 					<span class="shareBtns">
 						<i class="shareIcon blackHover share_facebook icon-facebook-squared" title="Share on Facebook"></i>
 						<i class="shareIcon blackHover share_twitter icon-twitter" title="Share on Twitter"></i>
-						<i class="shareIcon blackHover share_bitly icon-link" title="Share a short link"></i>
+						<button type="button" class="shareIcon share_bitly icon-link btn-naked" data-toggle="modal" data-target="#shareDialog"></button>
 						<button type="button" class="switchBuilder btn btn-xs btn-primary"></button>
 					</span>
 				</div>
@@ -340,19 +340,45 @@
 				 */
 				
 				function addKeyNavigationToNavigationControls() {
-					var swipperSelectors = $('.navDots').find('.navDotsNav, .dot');
+					var swipperSelectors = $('.navDots').find('.navDotsNav, .dot, .navGroup');
 					addButtonFeaturesToButtonLikeElements(swipperSelectors);
 					//hide tooltips when clicking on navigation control
 					//tooltips get shown when control gets focus - good for keyboard users, but not for mouse users
 					swipperSelectors.on('click', function(e) {
 						$(e.target).tooltip('hide');
-						setTimeout(function() {$('.section.active .title').focus()},10);
+						setTimeout(function() {$('.section.active .title').filter(':visible').focus()},10);
+						//Swiper needs a 300+ms timeout to allow slide transition to complete
+						setTimeout(function() {$('.section.swiper-slide-active .title').filter(':visible').focus()},400);
 					});
 					//Make the section title focusable, but only programatically
-					$('.section .title').attr('tabindex', '-1');
-					//TODO: Add arrow keys to .navDot
-					//This is complicated, because they are not all siblings, and tooltips are injected as siblings in the DOM
-					// so $(e.target).next().focus()  does not work
+					// do not show the focus ring on this non-interactive elements
+					$('.section .title').attr('tabindex', '-1').css('outline', 'none');
+
+					addArrowKeysToNavControl();
+				}
+
+				function addArrowKeysToNavControl() {
+					var $container = $('.navDotsInner');
+					$container.on('keydown', function (e) {
+						if (e.keyCode !== 38 && e.keyCode !== 40) {
+							return;
+						} //Up and down arrow keys
+						var delta = (e.keyCode === 38) ? -1 : 1;
+						var $focusableElements = $container.find('[tabindex]').not('.disabled');
+						var currentIndex = $focusableElements.index(document.activeElement);
+						if (currentIndex === -1) {
+							return;
+						}
+						var newIndex = currentIndex + delta;
+						if (newIndex < 0) {
+							newIndex = 0;
+						}
+						if ($focusableElements.length <= newIndex) {
+							newIndex = $focusableElements.length - 1;
+						}
+						$focusableElements.eq(newIndex).focus();
+						return false;
+					});
 				}
 
 				function escapeKeyDefaultsToNavigationControl() {
@@ -382,13 +408,6 @@
 				}
 
 				function addRefocusEventsToAvoidLostFocus() {
-					//Scroll for more
-					$('div.scrollInner').on('keydown', function (e) {
-						if (e.keyCode === 13) {
-							$('div.dot[data-index="1"]').focus();
-							return false;
-						}
-					});
 					//Scroll before first
 					//var controlElement = $('div.navDotsUp')
 					$('div.navDotsUp').on('blur', function (e) {
@@ -407,30 +426,38 @@
 
 				function makeHeaderElementsFirstInTabOrder()
 				{
-					$('.header').find('a, button, [tabindex]').attr('tabindex', '1');
-					//TODO:  If image in .header a.logoLink has display:none, link still gets focus, but it is off screen
-					//Not a high priority, because we will always show the image
+					$('.header').find('a[href], button, [tabindex]').filter(':visible').attr('tabindex', '1');
 				}
 
-				function addSkipMainStageAtSectionBottom() {
-					var skippy = $('<a id="skippy" class="sr-only sr-only-focusable" href="#"><div class="container"><span class="skiplink-text">Skip Main Stage</span></div></a>');
+				function makeNavigationElementsSecondInTabOrder()
+				{
+					$('.navDots').find('.navDotsNav, .dot, .navGroup').attr('tabindex', '2');
+				}
+
+				function addJumpToMainStageAtBottomOfActiveSection(index) {
+					$('#skipper').remove();
+					var mediatype = app.data.getStoryByIndex(index).media.type;
+					if (mediatype === 'image') return;
+					var inSidePanel = $('#sidePanel').filter(':visible').length > 0;
+					if (inSidePanel && app.data.getStoryLength()-1 <= index) return;
+					var skippy = $('<a id="skipper" class="media-skipper sr-only sr-only-focusable" href="#"><span class="skiplink-text">Jump to ' + mediatype + '</span></a>');
 					skippy.click(function() {
-						$('.section.active + .section').find('.title').focus().get(0).scrollIntoView();
+						$('#mainStagePanel').find('.mainMediaContainer.active')
+								.find('a[href], [tabindex], button, input, textarea, select, object, iframe')
+								.filter(':visible:first').focus();
 					});
-					var sections = $('.section > .social');
-					var sectionCount = sections.length;
-					sections.filter(function(index) {
-						var isNotLastSection = index < sectionCount - 1;
-						var isNotImage = app.data.getStoryByIndex(index).media.type != 'image';
-						return isNotImage && isNotLastSection;
-					}).after(skippy);
+					$('.section.active').filter(':visible').find('.social').after(skippy);
+					$('.section.swiper-slide-active').filter(':visible').find('.social').after(skippy);
 				}
 
-				function removeNavigationFromInactiveSections() {
-					$('div.section').not('.active').find('a, .btn-fullscreen, .shareIcon').attr('tabindex', '-1');
-					var $active = $('div.section.active');
-					$active.find('a').removeAttr('tabindex');
-					$active.find('.btn-fullscreen, .shareIcon').attr('tabindex', '0');
+				function addKeyNavigationAlert() {
+					var notice = $('<p id="keyNavNotice" class="sr-only sr-only-focusable" tabindex="1">Use the escape key at anytime to jump to the navigation controls.</p>');
+					notice.css('padding', '3px').css('margin-left', '15px').css('outline', 'none');
+					notice.blur(function() {
+						//notice.removeAttr("tabindex");
+						notice.remove();
+					});
+					$('body').prepend(notice)
 				}
 
 				// The application is ready
@@ -440,12 +467,19 @@
 					 */
 
 					addKeyNavigationToNavigationControls();
+					topic.subscribe("story-navigation-control-update", addKeyNavigationToNavigationControls);
 					escapeKeyDefaultsToNavigationControl();
 
 					// The 'scroll to see more' control $('.scrollInner') does not need key focus, just go straight to Nav controls
 
+					// Back Button appears over the map after a main stage action
+					addButtonFeaturesToButtonLikeElements($('.backButton'));
+
 					// Add key navigation to social links
 					addButtonFeaturesToButtonLikeElements($('.share_facebook, .share_twitter'));  //.share_bitly already a button
+
+					// Add key navigation to main stage actions (these anchor elements have no href)
+					addButtonFeaturesToButtonLikeElements($('a[data-storymaps]'));
 
 					// Add key control to image 'view-fullsize' control
 					var viewImageFullsizeControl = $('.image-wrapper .btn-fullscreen');
@@ -458,11 +492,13 @@
 
 					makeHeaderElementsFirstInTabOrder();
 
-					addSkipMainStageAtSectionBottom();
+					makeNavigationElementsSecondInTabOrder(); // Required for floatingPanel
+					topic.subscribe("story-navigation-control-update", makeNavigationElementsSecondInTabOrder);
 
-					removeNavigationFromInactiveSections();
-					topic.subscribe("story-navigated-to-section", removeNavigationFromInactiveSections);
+					addJumpToMainStageAtBottomOfActiveSection(0);
+					topic.subscribe('story-navigated-to-section', addJumpToMainStageAtBottomOfActiveSection);
 
+					addKeyNavigationAlert();
 				});
 			});
 		</script>
