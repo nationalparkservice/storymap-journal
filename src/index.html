@@ -4,39 +4,40 @@
 		<title></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-		
+
 		<meta name="fragment" content="!">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-		
+
 		<link type="image/ico" rel="shortcut icon" href="resources/tpl/viewer/icons/favicon.ico">
 		<link type="image/ico" rel="icon"  href="resources/tpl/viewer/icons/favicon.ico">
-		
-		<!-- 
+
+		<!--
 			To correctly reference your Map Journal in search engine:
 			 - create and fill out extensively an ArcGIS Online item that link to your final application
 			 - edit the following four tags as well as the title tag above on line 4
+			 - see https://developerscorner.storymaps.arcgis.com/grow-your-story-maps-audience-with-open-graph-tags-b7639cb65d5c
 		-->
 		<meta name="description" content="This story map was created with the National Park Service Story Map Journal template.">
-		
+
 		<!-- Facebook sharing -->
 		<meta property="og:type" content="article"/>
 		<meta property="og:title" content="NPS Story Map Journal"/>
 		<meta property="og:description" content="This story map was created with the National Park Service Story Map Journal template."/>
 		<meta property="og:image" content="http://www.arcgis.com/apps/MapJournal/resources/common/icons/esri-globe.png"/>
-		
-		<!-- 
+
+		<!--
 			This application is released under the Apache License V2.0 by Esri http://www.esri.com/
 			Checkout the project repository on GitHub to access source code, latest revision, developer documentation, FAQ and tips
 			https://github.com/Esri/map-journal-storytelling-template-js
 		-->
-		
+
 		<script type="text/javascript">
 			//-------------------------------------------------------------------------------------------
 			//     Application configuration (ignored on ArcGIS Online, Portal and during development)
 			//-------------------------------------------------------------------------------------------
 			var configOptions = {
-				// Enter an application ID created through the Map Journal builder 
+				// Enter an application ID created through the Map Journal builder
 				appid: "",
 				// Optionally to secure Journal's access, use an OAuth application ID (example: 6gyOg377fLUhUk6f)
 				// User will need to sign-in to access the viewer even if your application is public
@@ -51,22 +52,22 @@
 				//        Your orgID will be shown in the search box.
 				authorizedOwners: ["*"]
 			};
-			// Optionally sharing and proxy URLs can be configured in app/config.js. This is only required  
-			//  when the webmap is not hosted on ArcGIS Online or a Portal for ArcGIS instance and the application isn't deployed as /home/MapJournal/ or /apps/MapJournal/. 
+			// Optionally sharing and proxy URLs can be configured in app/config.js. This is only required
+			//  when the webmap is not hosted on ArcGIS Online or a Portal for ArcGIS instance and the application isn't deployed as /home/MapJournal/ or /apps/MapJournal/.
 			// Optionally Bing Maps key, Geometry and Geocode service's URLs can be configured in app/config.js. This is only required
 			//  if the Organization or Portal for ArcGIS instance default configuration has to be overwritten.
 		</script>
-		
+
 		<!--
-		
+
 			Edit below at your own risk
-		
+
 		-->
-		
+
 		<script type="text/javascript">
 			var app = {
-				version: '1.7.1',
-				pathJSAPI: '//js.arcgis.com/3.16/'
+				version: '1.9.1',
+				pathJSAPI: '//js.arcgis.com/3.19/'
 			};
 		</script>
 	</head>
@@ -74,10 +75,10 @@
 		<style>
 			/* CUSTOM CSS RULES */
 		</style>
-		
+
 		<!-- Builder top panel is injected here -->
 		<div id="builderPanel" class="hide mainViewAboveMap"></div>
-		
+
 		<!-- Content -->
 		<div id="contentPanel" class="mobileView">
 			<table class="containerPanelInner">
@@ -169,7 +170,7 @@
 			</table>
 		</div>
 		<!-- /Content -->
-		
+
 		<div id="floatingPanel" class="floatingPanel sectionPanel">
 			<div class="backdrop"></div>
 			<div class="header" aria-hidden="true">
@@ -227,7 +228,7 @@
 			<div class="builder-mask"></div>
 			<div class="firstAddExplain"></div>
 		</div>
-		
+
 		<!-- Mobile -->
 		<div id="mobileView" class="floatingSwiper">
 			<div class="swiper-container">
@@ -254,35 +255,35 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<!-- Loading -->
 		<style>
 			#loadingOverlay {
-				position: absolute; 
-				top: 0; 
-				left: 0; 
-				z-index: 1100; 
-				width: 100%; 
-				height: 100%; 
-				overflow: hidden; 
-				background-color: #E5E5E5; 
-				-webkit-box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3); 
-				-moz-box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3); 
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1100;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				background-color: #E5E5E5;
+				-webkit-box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3);
+				-moz-box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3);
 				box-shadow: inset 0px 0px 82px 19px rgba(0,0,0,0.3);
 			}
-			
+
 			@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
 			@-moz-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
 			@-webkit-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
 			@-ms-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
 			@-o-keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
-			
+
 			@keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
 			@-moz-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
 			@-webkit-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
 			@-ms-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
 			@-o-keyframes fadeout { from { opacity: 1; } to { opacity: 0; } }
-			
+
 			#loadingOverlay.fadeOut {
 				-webkit-animation: fadeout 1.1s;
 				-moz-animation: fadeout 1.1s;
@@ -293,32 +294,32 @@
 				-moz-animation-fill-mode:forwards;
 				animation-fill-mode:forwards;
 			}
-			
+
 			#loadingIndicator {
 				position: fixed;
 				top: 50%;
 				left: 50%;
 				z-index: 1101;
 			}
-			
+
 			.loadingIndicator {
 				margin-left: -17px;
 				margin-top: -20px;
 			}
 		</style>
-		
+
 		<div id="loadingOverlay"></div>
 		<div id="loadingIndicator" class="loadingIndicator">
 			<img src="resources/tpl/viewer/icons/loading-light.gif" />
 		</div>
 		<div id="loadingMessage"></div>
-		
+
 		<!-- Share dialog -->
 		<div class="modal fade shareDialog" id="shareDialog" role="dialog" data-backdrop="static" aria-labelledby="shareDialogTitle"></div>
-		
+
 		<!-- Builder views are injected here -->
 		<div id="builder-views"></div>
-		
+
 		<!-- Fatal error box -->
 		<div id="fatalError">
 			<table border="0">
@@ -331,176 +332,9 @@
 				</tr>
 			</table>
 		</div>
-		
+
+		<div class="print-warning"></div>
+
 		<script type="text/javascript" src="app/main-config.js"></script>
-		<script type="text/javascript">
-			require(["dojo/topic"], function(topic) {
-				/*
-				 * Custom Javascript to be executed while the application is initializing goes here
-				 */
-				
-				function addKeyNavigationToNavigationControls() {
-					var swipperSelectors = $('.navDots').find('.navDotsNav, .dot, .navGroup');
-					addButtonFeaturesToButtonLikeElements(swipperSelectors);
-					//hide tooltips when clicking on navigation control
-					//tooltips get shown when control gets focus - good for keyboard users, but not for mouse users
-					swipperSelectors.on('click', function(e) {
-						$(e.target).tooltip('hide');
-						setTimeout(function() {$('.section.active .title').filter(':visible').focus()},10);
-						//Swiper needs a 300+ms timeout to allow slide transition to complete
-						setTimeout(function() {$('.section.swiper-slide-active .title').filter(':visible').focus()},400);
-					});
-					//Make the section title focusable, but only programatically
-					// do not show the focus ring on this non-interactive elements
-					$('.section .title').attr('tabindex', '-1').css('outline', 'none');
-
-					addArrowKeysToNavControl();
-				}
-
-				function addArrowKeysToNavControl() {
-					var $container = $('.navDotsInner');
-					$container.on('keydown', function (e) {
-						if (e.keyCode !== 38 && e.keyCode !== 40) {
-							return;
-						} //Up and down arrow keys
-						var delta = (e.keyCode === 38) ? -1 : 1;
-						var $focusableElements = $container.find('[tabindex]').not('.disabled');
-						var currentIndex = $focusableElements.index(document.activeElement);
-						if (currentIndex === -1) {
-							return;
-						}
-						var newIndex = currentIndex + delta;
-						if (newIndex < 0) {
-							newIndex = 0;
-						}
-						if ($focusableElements.length <= newIndex) {
-							newIndex = $focusableElements.length - 1;
-						}
-						$focusableElements.eq(newIndex).focus();
-						return false;
-					});
-				}
-
-				function escapeKeyDefaultsToNavigationControl() {
-					$('body').on('keydown', function (e) {
-						if (e.keyCode === 27) {  //escape
-							$('div.dot.active').focus();
-							//return false;  // The key handler for colorbox will need to see this as well.
-						}
-					});
-				}
-
-				function addButtonFeaturesToButtonLikeElements($selection)
-				{
-					$selection
-						.attr("tabindex", "0")
-						.attr("role", "button")
-						.on('keydown', function (e) {
-							if (e.keyCode === 32 || e.keyCode === 13) {
-								$(e.target).click();
-								return false;
-							}
-						})
-						.each(function() {
-							var title = $(this).attr('title');
-							if (title) {$(this).attr('aria-label', title)}
-						});
-				}
-
-				function addRefocusEventsToAvoidLostFocus() {
-					//Scroll before first
-					//var controlElement = $('div.navDotsUp')
-					$('div.navDotsUp').on('blur', function (e) {
-						if ($(e.target).hasClass('disabled')) {
-							$('div.dots :first-child').focus();
-						}
-					});
-					//Scroll after last
-					//controlElement = $('div.navDotsDown')
-					$('div.navDotsDown').on('blur', function (e) {
-						if ($(e.target).hasClass('disabled')) {
-							$('div.dots :last-child').focus();
-						}
-					});
-				}
-
-				function makeHeaderElementsFirstInTabOrder()
-				{
-					$('.header').find('a[href], button, [tabindex]').filter(':visible').attr('tabindex', '1');
-				}
-
-				function makeNavigationElementsSecondInTabOrder()
-				{
-					$('.navDots').find('.navDotsNav, .dot, .navGroup').attr('tabindex', '2');
-				}
-
-				function addJumpToMainStageAtBottomOfActiveSection(index) {
-					$('#skipper').remove();
-					var mediatype = app.data.getStoryByIndex(index).media.type;
-					if (mediatype === 'image') return;
-					var inSidePanel = $('#sidePanel').filter(':visible').length > 0;
-					if (inSidePanel && app.data.getStoryLength()-1 <= index) return;
-					var skippy = $('<a id="skipper" class="media-skipper sr-only sr-only-focusable" href="#"><span class="skiplink-text">Jump to ' + mediatype + '</span></a>');
-					skippy.click(function() {
-						$('#mainStagePanel').find('.mainMediaContainer.active')
-								.find('a[href], [tabindex], button, input, textarea, select, object, iframe')
-								.filter(':visible:first').focus();
-					});
-					$('.section.active').filter(':visible').find('.social').after(skippy);
-					$('.section.swiper-slide-active').filter(':visible').find('.social').after(skippy);
-				}
-
-				function addKeyNavigationAlert() {
-					var notice = $('<p id="keyNavNotice" class="sr-only sr-only-focusable" tabindex="1">Use the escape key at anytime to jump to the navigation controls.</p>');
-					notice.css('padding', '3px').css('margin-left', '15px').css('outline', 'none');
-					notice.blur(function() {
-						//notice.removeAttr("tabindex");
-						notice.remove();
-					});
-					$('body').prepend(notice)
-				}
-
-				// The application is ready
-				topic.subscribe("tpl-ready", function(){
-					/*
-					 * Custom Javascript to be executed when the application is ready goes here
-					 */
-
-					addKeyNavigationToNavigationControls();
-					topic.subscribe("story-navigation-control-update", addKeyNavigationToNavigationControls);
-					escapeKeyDefaultsToNavigationControl();
-
-					// The 'scroll to see more' control $('.scrollInner') does not need key focus, just go straight to Nav controls
-
-					// Back Button appears over the map after a main stage action
-					addButtonFeaturesToButtonLikeElements($('.backButton'));
-
-					// Add key navigation to social links
-					addButtonFeaturesToButtonLikeElements($('.share_facebook, .share_twitter'));  //.share_bitly already a button
-
-					// Add key navigation to main stage actions (these anchor elements have no href)
-					addButtonFeaturesToButtonLikeElements($('a[data-storymaps]'));
-
-					// Add key control to image 'view-fullsize' control
-					var viewImageFullsizeControl = $('.image-wrapper .btn-fullscreen');
-					addButtonFeaturesToButtonLikeElements(viewImageFullsizeControl);
-
-					// Add key control to all mobile controls (needed for embed mode)
-					addButtonFeaturesToButtonLikeElements($('#mobileView').find('p.help-embed, div.embed-btn, span.embed-btn2'));
-
-					addRefocusEventsToAvoidLostFocus();
-
-					makeHeaderElementsFirstInTabOrder();
-
-					makeNavigationElementsSecondInTabOrder(); // Required for floatingPanel
-					topic.subscribe("story-navigation-control-update", makeNavigationElementsSecondInTabOrder);
-
-					addJumpToMainStageAtBottomOfActiveSection(0);
-					topic.subscribe('story-navigated-to-section', addJumpToMainStageAtBottomOfActiveSection);
-
-					addKeyNavigationAlert();
-				});
-			});
-		</script>
 	</body>
 </html>

@@ -67,6 +67,22 @@
 	background: url('../../../../../resources/tpl/viewer/icons/dotNavBar-arrows-white.png') no-repeat -52px 1px;
 }
 
+.navDots.theme-black .navDotsUp {
+	background: url('../../../../../resources/tpl/viewer/icons/dotNavBar-arrows-black.png') no-repeat 0 13px;
+}
+
+.navDots.theme-black .navDotsDown {
+	background: url('../../../../../resources/tpl/viewer/icons/dotNavBar-arrows-black.png') no-repeat -26px 13px;
+}
+
+.navDots.theme-black.horizontal .navDotsUp {
+	background: url('../../../../../resources/tpl/viewer/icons/dotNavBar-arrows-black.png') no-repeat -67px 1px;
+}
+
+.navDots.theme-black.horizontal .navDotsDown {
+	background: url('../../../../../resources/tpl/viewer/icons/dotNavBar-arrows-black.png') no-repeat -52px 1px;
+}
+
 /*
  * Dot
  */
@@ -122,7 +138,7 @@
 /*
  * Tooltip
  */
- 
+
 .navDots .tooltip {
   	max-width: 450px;
 }
@@ -138,7 +154,7 @@
 
 
 /* On Firefox tooltip get cropped with ellipsis */
-@-moz-document url-prefix() { 
+@-moz-document url-prefix() {
 	.navDots .tooltip-inner {
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -149,7 +165,7 @@
 /*
  * Navigation groups
  */
- 
+
 .navDots .navGroups {
 	color: #444;
 	font-size: 0.7em;
@@ -163,7 +179,7 @@
 }
 
 .navDots .navGroup {
-	margin: 2px 0;	
+	margin: 2px 0;
 	cursor: pointer;
 }
 

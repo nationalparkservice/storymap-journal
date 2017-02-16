@@ -1,14 +1,16 @@
 define([
-        "./SocialSharing", 
-        "../ui/share/ShareDialog"
-    ], 
+        "./SocialSharing",
+        "../ui/share/ShareDialog",
+        'storymaps/tpl/core/Helper'
+    ],
 	function(
 		SocialSharing,
-		ShareDialog
+		ShareDialog,
+		Helper
 	){
 		//reference to ShareDialog is unused, and not needed as it is tracked in the DOM
 		new ShareDialog($("#shareDialog"));
-		
+
 		function resizeLinkContainer(container)
 		{
 			if ( container.find(".linkContainer").parent().length ) {
@@ -17,13 +19,13 @@ define([
 						// TODO remove that ugly hack (186 is the width of the responsive view header container)
 						(container.find(".logoContainer").position()||{ left: 186 }).left
 						- container.find(".linkContainer").parent().position().left
-						- container.find(".shareBtns").outerWidth() 
+						- container.find(".shareBtns").outerWidth()
 						// need a margin if there is a logo
 						- ($(".logoContainer").width() > 1 ? 14 : 4)
 					);
 			}
 		}
-		
+
 		return {
 			setLogo: function(container, headerCfg)
 			{
@@ -32,52 +34,58 @@ define([
 					resizeLinkContainer(container);
 				}
 				else {
-					container.find('.logoLink').css("cursor", headerCfg.logoTarget ? "pointer" : "default");
-					
-					if (headerCfg.logoTarget)
-						container.find('.logoLink').attr("href", headerCfg.logoTarget);
-					
+					var logoLink = container.find('.logoLink');
+					if (headerCfg.logoTarget) {
+						logoLink.css('cursor', 'pointer')
+										.attr('href', headerCfg.logoTarget);
+					} else {
+						logoLink.css('cursor', 'default')
+										.removeAttr('href');
+					}
+
 					resizeLinkContainer(container);
-					
-					container.find('.logoImg')[0].onload = function(){
+
+					var logoImg = container.find('.logoImg');
+
+					logoImg[0].onload = function(){
 						resizeLinkContainer(container);
 					};
-					container.find('.logoImg')[0].onerror = function(){
+					logoImg[0].onerror = function(){
 						resizeLinkContainer(container);
 					};
-					
-					container.find('.logoImg').attr("src", headerCfg.logoURL).show();
+
+					logoImg.attr("src", Helper.possiblyAddToken(headerCfg.logoURL)).show();
 				}
 			},
 			setLink: function(container, headerCfg)
 			{
 				if( headerCfg.linkURL && headerCfg.linkText )
 					container.find('.linkContainer').html('<a href="' + headerCfg.linkURL + '" class="link" target="_blank">' + headerCfg.linkText + '</a>');
-				else 
+				else
 					container.find('.linkContainer').html(headerCfg.linkText);
 			},
 			setSocial: function(container, headerCfg)
 			{
 				var socialCfg = headerCfg.socialBtn;
-				
+
 				container.find(".share_facebook").toggleClass(
 					'active',
-					app.cfg.HEADER_SOCIAL 
-					&& app.cfg.HEADER_SOCIAL.facebook 
+					app.cfg.HEADER_SOCIAL
+					&& app.cfg.HEADER_SOCIAL.facebook
 					&& (!socialCfg || socialCfg.facebook)
 				);
-				
+
 				container.find(".share_twitter").toggleClass(
 					'active',
-					app.cfg.HEADER_SOCIAL 
-					&& app.cfg.HEADER_SOCIAL.twitter 
+					app.cfg.HEADER_SOCIAL
+					&& app.cfg.HEADER_SOCIAL.twitter
 					&& (!socialCfg || socialCfg.twitter)
 				);
-				
+
 				container.find(".share_bitly").toggleClass(
 					'active',
 					app.cfg.HEADER_SOCIAL && app.cfg.HEADER_SOCIAL.bitly
-					&& app.cfg.HEADER_SOCIAL.bitly.enable && app.cfg.HEADER_SOCIAL.bitly.login 
+					&& app.cfg.HEADER_SOCIAL.bitly.enable && app.cfg.HEADER_SOCIAL.bitly.login
 					&& app.cfg.HEADER_SOCIAL.bitly.key && (!socialCfg || socialCfg.bitly)
 				);
 			},
@@ -87,7 +95,7 @@ define([
 				if ( disable ) {
 					container.find(".shareIcon").attr("title", "");
 				}
-				
+
 				container.find(".shareIcon")
 					.toggleClass("disabled", !! disable)
 					.tooltip(disable ? {
@@ -98,7 +106,7 @@ define([
 			disableSocialBtnAppSharingAutoplay: function(container, placement)
 			{
 				container.find(".shareIcon").attr("title", "");
-				
+
 				container.find(".shareIcon")
 					.toggleClass("disabled", true)
 					.tooltip({
@@ -112,33 +120,33 @@ define([
 				container.find(".share_facebook").off('click').click(function(){
 					if ( $(this).hasClass("disabled") )
 						return;
-					
+
 					var title = $('<div>' + app.data.getWebAppData().getTitle() + '</div>').text(),
 						subtitle = $('<div>' + app.data.getWebAppData().getSubtitle() + '</div>').text();
 
 					SocialSharing.shareFacebook(
-						title, 
-						subtitle, 
-						null, 
+						title,
+						subtitle,
+						null,
 						$(this).data('url')
 					);
 				});
 				container.find(".share_twitter").off('click').click(function(){
 					if ( $(this).hasClass("disabled") )
 						return;
-					
+
 					var title = $('<div>' + app.data.getWebAppData().getTitle() + '</div>').text();
-					
+
 					SocialSharing.shareTwitter(
-						title, 
+						title,
 						$(this).data('url')
 					);
 				});
 				/*
 				container.find(".share_bitly").off('click').click(function(){
 					SocialSharing.shareBitly(
-						$(this).parent(), 
-						bitlyPlacement, 
+						$(this).parent(),
+						bitlyPlacement,
 						$(this).data('url')
 					);
 				});
@@ -146,7 +154,7 @@ define([
 				container.find('.share_facebook').attr("title", i18n.viewer.headerFromCommon.facebookTooltip);
 				container.find('.share_twitter').attr("title", i18n.viewer.headerFromCommon.twitterTooltip);
 				container.find('.share_bitly').attr("title", i18n.viewer.headerFromCommon.bitlyTooltip);
-				
+
 				$(window).resize(function(){
 					resizeLinkContainer(container);
 				});

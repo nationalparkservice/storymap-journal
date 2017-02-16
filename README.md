@@ -1,4 +1,4 @@
-Story Map Journal
+﻿Story Map Journal
 =================
 
 The Story Map Journal is ideal when you want to combine narrative text with maps and other embedded content. A Map Journal contains entries, or sections, that users simply scroll through. Each section in a Map Journal has an associated map, image, video or web page. Actions can also be defined in journal sections so that, for example, clicking a word automatically zooms the section’s map to a particular location.
@@ -9,7 +9,9 @@ The Story Map Journal is ideal when you want to combine narrative text with maps
 [Map Journal page on Esri Story Maps website](http://storymaps.arcgis.com/en/app-list/map-journal/) |
 [Download](http://links.esri.com/storymaps/map_journal_template_zip)
 
-**Latest release is version 1.7.1**, if you want to be informed of new releases, we recommend you to watch this repository ([see GitHub help](https://help.github.com/articles/watching-repositories)). See the [release page](https://github.com/Esri/map-journal-storytelling-template-js/releases) for release notes.
+**Latest release is version 1.8.1**, if you want to be informed of new releases, we recommend you to watch this repository ([see GitHub help](https://help.github.com/articles/watching-repositories)). See the [release page](https://github.com/Esri/map-journal-storytelling-template-js/releases) for release notes.
+
+For more infomation about using and customizing Esri's Storytelling Apps follow the [Story Maps Developers' Corner](https://developerscorner.storymaps.arcgis.com).
 
 ## Help content
 
@@ -73,19 +75,11 @@ We actively test the application in all major browsers but if you experience dif
 ### Tips for your content
 
 #### Link between sections
-One [popular](https://github.com/Esri/map-journal-storytelling-template-js/issues/5) [request](https://github.com/Esri/map-journal-storytelling-template-js/issues/7) is to add the ability to navigate between Journal's sections using links in the panel or through map features popup. Until we implement that capability in the builder you can do it using HTML markup.
+One [popular](https://github.com/Esri/map-journal-storytelling-template-js/issues/5) [request](https://github.com/Esri/map-journal-storytelling-template-js/issues/7) is to add the ability to navigate between Journal's sections using links in the panel or through map features popup. As of September 2016, this ability is now available in the builder.
 
-To add links in a section content, use the `Source button` of the text editor (second from the right on the first line) and use the following markup:
+To add a link to another section in the narrative panel, highlight the text for which you want to create the link and use the `Naviage to a section` action in the toolbar. See [this blog](https://blogs.esri.com/esri/arcgis/2016/09/14/whats-new-story-maps-september-2016/) for more information.
 
-```
-<p><a onclick="require(['dojo/topic'], function(topic){ topic.publish('story-navigate-section', 0); });">Navigate to home section</a></p>
-<p><a onclick="require(['dojo/topic'], function(topic){ topic.publish('story-navigate-section', 2); });">Navigate to section 2</a></p>
-<p><a onclick="require(['dojo/topic'], function(topic){ topic.publish('story-navigate-section', 4); });">Navigate to section 4</a></p>
-```
-
-Note that the links navigate the Journal using an index that start at 0 for the Home Section. If you remove or reorder your sections, you will have to modify the links manually.
-
-You can also add that capability to map feature popups. This can for example allow the home section map to be the spatial index to your story. To do that you need to download the application and include a piece of code in `index.html`, look at the end of the file and modify it as below. Follow the instructions to configure the web map and the layer that will receive the click event.
+You can also add this capability to map feature popups. This can, for example, allow the home section map to be the spatial index to your story. To do that you need to download the application and include a piece of code in `index.html`, look at the end of the file and modify it as below. Follow the instructions to configure the web map and the layer that will receive the click event.
 
 
 ```

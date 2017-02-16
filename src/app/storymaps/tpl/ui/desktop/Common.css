@@ -50,7 +50,7 @@
 	z-index: 2;
 	font-size: 15px;
 }
-	
+
 .sectionPanel .content .link {
 	font-weight: 400;
 }
@@ -62,7 +62,7 @@
 }
 
 .sectionPanel .logoWrapper {
-	height:50px; 
+	height:50px;
 	vertical-align: middle;
 }
 
@@ -86,7 +86,7 @@
 /*
  * App title
  */
- 
+
 .sectionPanel .appTitle {
 	display: block;
 	max-height: 0;
@@ -98,7 +98,8 @@
 }
 
 .sectionPanel .appTitle * {
-	font-size: 18px !important;
+	font-size: 24px !important;
+	font-weight: normal;
 }
 
 .sectionPanel .appTitle.anchored {
@@ -142,8 +143,8 @@
 }
 
 .sectionPanel .error-status .check-story-close {
-	margin: 0px 3px 0px 5px; 
-	cursor: pointer; 
+	margin: 0px 3px 0px 5px;
+	cursor: pointer;
 	pointer-events: all;
 }
 
@@ -302,7 +303,7 @@ body[data-theme-major=black] .builder-content-panel .builder-content-panel-group
 .sectionPanel .social .shareIcon:hover {
 	color: inherit;
 	opacity: 1.0;
-} 
+}
 
 .sectionPanel .section:first-child .social {
 	display: none;
@@ -311,7 +312,7 @@ body[data-theme-major=black] .builder-content-panel .builder-content-panel-group
 /*
  * Switch to builder button
  */
- 
+
 .switchBuilder {
 	display: none;
 	margin-top: -6px;
@@ -326,8 +327,8 @@ body[data-theme-major=black] .builder-content-panel .builder-content-panel-group
 }
 
 .switchBuilder .switch-builder-close {
-	margin-left: 5px; 
-	cursor: pointer; 
+	margin-left: 5px;
+	cursor: pointer;
 	pointer-events: all;
 }
 
@@ -341,7 +342,7 @@ body[data-theme-major=black] .builder-content-panel .builder-content-panel-group
 	bottom: 0;
 	left: 0;
 	right: 0;
-	height: 82px;
+	height: 100px;
 	padding: 15px;
 	cursor: pointer;
 }
@@ -362,37 +363,36 @@ body.layout-float-right .floatingPanel .scroll {
 	background: url('../../../../../resources/tpl/viewer/icons/side-scroll.png');
 	background-repeat: no-repeat;
 	background-position: 50%;
-	background-size: 85px 52px;
-	
+
 	-webkit-animation-name: blinker;
 	-webkit-animation-duration: 2.5s;
 	-webkit-animation-timing-function: cubic-bezier(.5, 0, 1, 1);
 	-webkit-animation-iteration-count: infinite;
-	
+
 	-moz-animation-name: blinker;
 	-moz-animation-duration: 2.5s;
 	-moz-animation-timing-function: cubic-bezier(.5, 0, 1, 1);
 	-moz-animation-iteration-count: infinite;
-	
+
 	animation-name: blinker;
 	animation-duration: 2.5s;
 	animation-timing-function: cubic-bezier(.5, 0, 1, 1);
 	animation-iteration-count: infinite;
 }
 
-@-moz-keyframes blinker {  
+@-moz-keyframes blinker {
     0% { opacity: 1.0; }
     50% { opacity: 0.6; }
     100% { opacity: 1.0; }
 }
 
-@-webkit-keyframes blinker {  
+@-webkit-keyframes blinker {
     0% { opacity: 1.0; }
     50% { opacity: 0.6; }
     100% { opacity: 1.0; }
 }
 
-@keyframes blinker {  
+@keyframes blinker {
     0% { opacity: 1.0; }
     50% { opacity: 0.6; }
     100% { opacity: 1.0; }
@@ -401,7 +401,7 @@ body.layout-float-right .floatingPanel .scroll {
 /*
  * Autoplay
  */
- 
+
 #autoplay {
 	display: none;
     position: absolute;
