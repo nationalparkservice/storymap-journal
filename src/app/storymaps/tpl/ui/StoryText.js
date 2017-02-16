@@ -156,7 +156,7 @@ define(["dojo/topic",
 			// TODO: SIZES
 
 			$.colorbox({
-        href: fullscreenHref,
+				href: fullscreenHref,
 				//returnFocus: only works when colorbox is launched from an anchor element; this is a workaround
 				onClosed: function() { setTimeout(function() {e.target.focus();}, 0); },
 				photo: true,

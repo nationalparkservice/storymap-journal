@@ -271,8 +271,6 @@ define(["lib-build/tpl!./SidePanelSection",
 				setTimeout(function(){
 					loadVisibleIframe();
 				}, 0);
-
-
 			}
 
 			function createSectionBlock(/*editEl,*/ index, status, content, title)

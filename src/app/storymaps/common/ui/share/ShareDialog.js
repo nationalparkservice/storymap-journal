@@ -48,7 +48,7 @@ define([
         win.storyURL = container.find('.bitlylink').val();
       });
 
-      this.present = function(url, socialOptions) {
+			this.present = function(url, socialOptions) {
 				prepareDialog(url, socialOptions);
 				container.modal({keyboard: true});
 			};
@@ -81,7 +81,6 @@ define([
 				container.find('.autoplay-checkbox').prop("checked", false);
 
 				container.find('.label-print').html(i18n.viewer.shareFromCommon.print);
-
 			}
 
 			function createSocialbuttons(socialOptions)
