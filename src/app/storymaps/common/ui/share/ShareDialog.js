@@ -82,7 +82,7 @@ define([
 
 				container.find('.label-print').html(i18n.viewer.shareFromCommon.print);
 
-			};
+			}
 
 			function createSocialbuttons(socialOptions)
 			{
