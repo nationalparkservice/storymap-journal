@@ -42,10 +42,6 @@ require([
 
 	storyHTML += i18n.viewer.shareFromCommon.printInstruction2.replace('${link}', '<a href="' + window.storyURL + '">' + i18n.viewer.shareFromCommon.link + '</a>');
 	storyHTML += '</div>';
-	storyHTML += '<div class="print-btn">';
-	storyHTML += '<span class="glyphicon glyphicon-print" aria-hidden="true"></span>';
-	storyHTML += i18n.viewer.shareFromCommon.print;
-	storyHTML += '</div>';
 
 	storyHTML += '<div class="print-options">';
 	storyHTML += '<table style="width: 100%"><tr><td style="width: 50%">';
@@ -60,6 +56,11 @@ require([
 	storyHTML += '</label></div>';
 	storyHTML += '</td></tr></table>';
 	storyHTML += '</div>';
+  
+  storyHTML += '<button class="print-btn print-btn2">';
+  storyHTML += '<span class="glyphicon glyphicon-print" aria-hidden="true"></span>';
+  storyHTML += i18n.viewer.shareFromCommon.print;
+  storyHTML += '</button>';
 
 	storyHTML += '</div>';
 
@@ -236,7 +237,7 @@ require([
 
 			var videoIDYouTube = getYoutubeId(node.attr('src'));
 			if (videoIDYouTube) {
-				node.replaceWith('<div class="media media-image"><img src="http://img.youtube.com/vi/' + videoIDYouTube + '/0.jpg" /></div><i class="media-video-warning">' + i18n.viewer.shareFromCommon.printVideoWarning + '</i>');
+				node.replaceWith('<div class="media media-image"><img alt="" src="http://img.youtube.com/vi/' + videoIDYouTube + '/0.jpg" /></div><i class="media-video-warning">' + i18n.viewer.shareFromCommon.printVideoWarning + '</i>');
 			}
 
 			var videoIDVimeo = getVimeoId(node.attr('src'));
@@ -265,13 +266,13 @@ require([
 
 				break;
 			case "image":
-				outHTML += '<div class="media media-image"><img src="' + checkURLProtocol(media.image.url) + '" /></div>';
+				outHTML += '<div class="media media-image"><img alt="" src="' + checkURLProtocol(media.image.url) + '" /></div>';
 				break;
 			case "video":
 				var videoIDYouTube = getYoutubeId(media.video.url);
 
 				if (videoIDYouTube) {
-					outHTML += '<div class="media media-image"><img src="http://img.youtube.com/vi/' + videoIDYouTube + '/0.jpg" /></div>';
+					outHTML += '<div class="media media-image"><img alt="" src="http://img.youtube.com/vi/' + videoIDYouTube + '/0.jpg" /></div>';
 				}
 				// TODO: vimeo require a request to get the URL
 				//  this should be saved in the story data when added in builder

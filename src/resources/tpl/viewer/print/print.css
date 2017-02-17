@@ -74,7 +74,7 @@ strong {
 	display: block;
 	margin: 20px auto;
 	padding: 10px;
-	background-color: #CCC;
+	background-color: #FFEBEB;
 	color: #000;
 	border-radius: 2px;
 	font-size: 20px;
@@ -111,7 +111,12 @@ strong {
 	cursor: pointer;
 }
 
-.print-btn:hover {
+.print-btn2 {
+	background-color: white;
+	font-size: 20px;
+}
+
+.print-btn:hover, .print-btn2:focus {
 	background-color: #e6e6e6;
 	border-color: #adadad;
 }
