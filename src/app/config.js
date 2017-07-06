@@ -47,6 +47,7 @@ app.cfg = {
 				{name: "side-default-4", themeMajor: "white", dotNav: "#958962", panel: "#d8dad9", media: "#c8c1ab", text: "#000000", textLink: "#555", softText: "#191919", softBtn: "#191919",    esriLogo: "black"},
 				{name: "side-default-5", themeMajor: "white", dotNav: "#8f8c7a", panel: "#d8dad9", media: "#c0beb4", text: "#000000", textLink: "#555", softText: "#191919", softBtn: "#191919", esriLogo: "black"},
 				{name: "side-default-6", themeMajor: "white", dotNav: "#d1b669", panel: "#d8dad9", media: "#ddc990", text: "#000000", textLink: "#555", softText: "#191919", softBtn: "#191919",    esriLogo: "black"}
+				{name: "side-default-7", themeMajor: "black", dotNav: "#5A5A5A", panel: "#000000", media: "#EEEEEE", text: "#FFFFFF", textLink: "#DDD", softText: "#FFF",    softBtn: "#AAA",    esriLogo: "white"},
 			]
 		},
 		{
