@@ -1,4 +1,4 @@
-define(["dojo/Deferred", "esri/urlUtils"], 
+define(["dojo/Deferred", "esri/urlUtils"],
 	function(
 		Deferred,
 		urlUtils
@@ -63,31 +63,30 @@ define(["dojo/Deferred", "esri/urlUtils"],
 				});
 			},
 			*/
-			requestBitly: function (url)
-			{
-				var
-					targetUrl = url || document.location.href,
-					resultDeferred = new Deferred();
+			requestShortUrl: function(url) {
+				var esriUrlShortener = 'https://arcg.is/prod/shorten?callback=?',
+						targetUrl = url || document.location.href,
+						resultDeferred = new Deferred();
 
 				$.getJSON(
-					"https://api-ssl.bitly.com/v3/shorten?callback=?",
+					esriUrlShortener,
 					{
-						"format": "json",
-						"apiKey": app.cfg.HEADER_SOCIAL.bitly.key,
-						"login": app.cfg.HEADER_SOCIAL.bitly.login,
-						"longUrl": targetUrl
+						'longUrl': targetUrl
 					},
-					function(response)
-					{
-						if( ! response || ! response.data || ! response.data.url )
+					function(response) {
+						console.log(response);
+						if( ! response || ! response.data || ! response.data.url ) {
 							resultDeferred.reject(response ? response.status_txt : "No Response");
-						else
+						}
+						else {
 							resultDeferred.resolve(response.data.url);
+						}
 					}
 				);
 
 				return resultDeferred;
 			},
+
 			cleanURL: function(url, noEncoding)
 			{
 				var urlParams = urlUtils.urlToObject(url);

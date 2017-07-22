@@ -3,7 +3,6 @@ define([],
 		// Header default configuration
 		var HEADER_LOGO_URL = "resources/tpl/viewer/icons/nps-logo.png",
 			HEADER_LOGO_TARGET = "http://www.nps.gov",
-			HEADER_LINK_TEXT = "An NPS story map",
 			HEADER_LINK_URL = "http://www.nps.gov";
 
 		app.appCfg = {
@@ -228,7 +227,7 @@ define([],
 			{
 				app.cfg.HEADER_LOGO_URL = HEADER_LOGO_URL;
 				app.cfg.HEADER_LOGO_TARGET = HEADER_LOGO_TARGET;
-				app.cfg.HEADER_LINK_TEXT = HEADER_LINK_TEXT;
+				app.cfg.HEADER_LINK_TEXT = i18n.viewer.headerFromCommon.storymapsText;
 				app.cfg.HEADER_LINK_URL = HEADER_LINK_URL;
 
 				return app.cfg
