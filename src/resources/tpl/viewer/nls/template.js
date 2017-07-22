@@ -64,7 +64,7 @@ define({
 				errorNotPublished: "This link is not active (section is not published)"
 			},
 			headerFromCommon: {
-				storymapsText: "A story map",
+				storymapsText: "An NPS story map",
 				builderButton: "Edit",
 				facebookTooltip: "Share on Facebook",
 				twitterTooltip: "Share on Twitter",
