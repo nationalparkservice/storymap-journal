@@ -65,8 +65,8 @@
 
 		<script type="text/javascript">
 			var app = {
-				version: '1.11.0',
-				pathJSAPI: 'https://js.arcgis.com/3.21/'
+				version: '1.12.2',
+				pathJSAPI: 'https://js.arcgis.com/3.22/'
 			};
 		</script>
 		<noscript>
@@ -114,6 +114,10 @@
 									</tr>
 								</table>
 							</div>
+							<!-- <div class="resizer"></div> -->
+							<button class="scroll">
+								<div class="scrollInner" data-toggle="tooltip"></div>
+							</button>
 							<div class="appTitle" aria-hidden="true"></div>
 							<span class="error-status">
 								<button class="btn btn-xs btn-warning check-story"></button>
@@ -138,16 +142,12 @@
 									<div class="builder-lbl"></div>
 								</div>
 							</div>
-							<!-- <div class="resizer"></div> -->
-							<div class="scroll">
-								<div class="scrollInner" data-toggle="tooltip"></div>
-							</div>
 							<div class="builder-mask"></div>
 							<div class="firstAddExplain"></div>
 						</div>
 					</td>
 					<!-- Map -->
-					<td id="mainStagePanel" tabindex="1">
+					<td id="mainStagePanel">
 						<div id="mainStagePanelInner">
 							<div class="medias">
 								<!-- Maps and media injected here -->
@@ -157,10 +157,10 @@
 							</div>
 							<!-- Back button -->
 							<div class="mediaBackContainer">
-								<div class="backButton">
+								<button class="backButton">
 									<div class="backArrow"></div>
 									<span class="backLbl"></span>
-								</div>
+								</button>
 							</div>
 							<!-- Builder -->
 							<div id="builderQuotes" class="centerAlignOnFloat"></div>
@@ -227,9 +227,9 @@
 			<div class="navDots vertical">
 				<!-- navigation dots -->
 			</div>
-			<div class="scroll">
+			<button class="scroll" tabindex="-1">
 				<div class="scrollInner" data-toggle="tooltip"></div>
-			</div>
+			</button>
 			<div class="builder-mask"></div>
 			<div class="firstAddExplain"></div>
 		</div>

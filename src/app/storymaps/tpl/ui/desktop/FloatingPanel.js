@@ -78,7 +78,10 @@ define(["lib-build/tpl!./FloatingPanelSection",
 						container.find('.sections').css(layoutOptions.layoutCfg.position == "left" ? "padding-left" : "padding-right", "3%");
 					}
 
-					if ( app.userCanEdit && has("ie") != 9 && ! CommonHelper.getUrlParams().preview ) {
+					var urlParams = CommonHelper.getUrlParams();
+					var isPreview = (urlParams.preview === 'true' || urlParams.preview === '');
+					var isAutoplay = (urlParams.autoplay === 'true' || urlParams.autoplay === '');
+					if ( app.userCanEdit && has("ie") != 9 && !isPreview && !isAutoplay ) {
 						container.find('.error-status').addClass('enabled');
 						topic.subscribe("MYSTORIES_SCAN", updateErrorStatus);
 						updateErrorStatus("start");
@@ -128,6 +131,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 					_navDots.setActive(index);
 					_swipePane.swipeTo(index);
 					_sectionIndex = index;
+					this.focusSection(index);
 
 					// Scroll up
 					if ( container.find('.swiper-slide-visible').length )
@@ -142,6 +146,13 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				}
 
 				updateAppTitle();
+			};
+
+			this.focusSection = function(index) {
+				var sectionTitle = container.find('.section').eq(index).find('.title').eq(0);
+				setTimeout(function() {
+					sectionTitle.focus();
+				}, 200);
 			};
 
 			this.getSectionNumber = function()
@@ -282,7 +293,8 @@ define(["lib-build/tpl!./FloatingPanelSection",
 					content: StoryText.prepareEditorContent(content),
 					lblShare: i18n.viewer.headerFromCommon.share,
 					shareURL: shareURL,
-					scroll: i18n.viewer.floatLayout.scroll
+					scroll: i18n.viewer.floatLayout.scroll,
+					lblMainstageBtn: i18n.viewer.common.focusMainstage
 				});
 			}
 
@@ -548,7 +560,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 
 			function onKeyboardEvent(e)
 			{
-				/* jshint unused:vars */
+				 /* jshint unused:vars */
 			}
 
 			/*
@@ -715,6 +727,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 				// Disable map keybopard navigation
 				// To fix conflict with the Swiper component
 				// That guy listen to even on document and I haven't find the proper way to not mess them up
+				// ALS 9/2017 -- note we're gonna enable keyboard nav on mainstage focus then disable on exit
 				app.map && app.map.disableKeyboardNavigation();
 
 				if ( isInBuilder )

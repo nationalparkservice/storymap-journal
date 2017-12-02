@@ -189,6 +189,7 @@ define(["lib-build/css!./MainView",
 				topic.subscribe("story-update-sections", updateUIStory);
 				topic.subscribe("story-update-section", updateStorySection);
 				topic.subscribe("story-perform-action-media", app.ui.mainStage.updateMainMediaWithStoryAction);
+				topic.subscribe("story-focus-section", focusSection);
 
 				topic.subscribe("ADDEDIT_LOAD_WEBMAP", app.ui.mainStage.loadTmpWebmap);
 				topic.subscribe("ADDEDIT_SHOW_WEBMAP", app.ui.mainStage.showWebmapById);
@@ -471,7 +472,10 @@ define(["lib-build/css!./MainView",
 				setCommonLayoutColor();
 				StoryText.createMainMediaActionLink();
 				StoryText.createMediaFullScreenButton();
+				app.ui.sidePanel.attachTabEvents();
+				app.ui.floatingPanel.attachTabEvents();
 				StoryText.styleSectionPanelContent();
+				StoryText.createMainStageFocusButton();
 
 				navigateStoryToIndex(app.data.getCurrentSectionIndex());
 
@@ -596,14 +600,24 @@ define(["lib-build/css!./MainView",
 				CommonHelper.addCSSRule(".section a, .builder-content-panel .builder-lbl { color: " + colors.textLink + "; }");
 				CommonHelper.addCSSRule('.builder-content-panel .builder-content-panel-group:not(.disabled):hover .builder-lbl { color: ' + colors.text + ' !important; }');
 				if (colors.name && colors.name.match(/-modified$|-org$/)) {
+					//header styles for shared or modified theme
 					CommonHelper.addCSSRule('.header .link, .shareIcon, .shareIcon:hover { color: ' + colors.textLink + '; }');
 					CommonHelper.addCSSRule('.shareIcon { opacity: 0.75; }');
 					CommonHelper.addCSSRule('.shareIcon:hover { opacity: 1.0; }');
 					CommonHelper.addCSSRule('.sectionPanel .separator { border-bottom-color: ' + colors.text + '; }');
 					// CommonHelper.addCSSRule('figure figcaption { color: ' + colors.media + '; }');
+				} else if (colors.themeMajor == "black") {
+					//header styles for  built-in theme with black background
+					CommonHelper.addCSSRule('.header .link, .shareIcon, .shareIcon:hover { color: darkgray; }');
+					CommonHelper.addCSSRule('.shareIcon { opacity: 0.5; }');
+					CommonHelper.addCSSRule('.shareIcon:hover { opacity: 0.75; }');
+					CommonHelper.addCSSRule('.sectionPanel .separator { border-bottom-color: #ccc; }');
+					// CommonHelper.addCSSRule('figure figcaption { color: #adadad; }');
 				} else {
-					CommonHelper.addCSSRule('.header .link, .shareIcon, .shareIcon:hover { color: #ddd; }');
-					CommonHelper.addCSSRule('.shareIcon { opacity: 1; }');
+					//header styles for built-in themes with light background
+					CommonHelper.addCSSRule('.header .link, .shareIcon, .shareIcon:hover { color: #545454; }');
+					CommonHelper.addCSSRule('.shareIcon { opacity: 0.25; }');
+					CommonHelper.addCSSRule('.shareIcon:hover { opacity: 0.75; }');
 					CommonHelper.addCSSRule('.sectionPanel .separator { border-bottom-color: #ccc; }');
 					// CommonHelper.addCSSRule('figure figcaption { color: #adadad; }');
 				}
@@ -702,6 +716,14 @@ define(["lib-build/css!./MainView",
 				topic.publish('story-navigated-to-section', index);
 			}
 
+			function focusSection(index) {
+				if (index < 0 || index > app.data.getStoryLength() - 1) {
+					return;
+				}
+				app.ui.sidePanel.focusSection(index);
+				app.ui.floatingPanel.focusSection(index);
+			}
+
 			this.onHashChange = function()
 			{
 				var view = location.hash ? location.hash.substring(1) : "";
@@ -712,21 +734,24 @@ define(["lib-build/css!./MainView",
 			// User events
 			//
 
-			function onMapCommandHomeClick()
+			function onMapCommandHomeClick(extent)
 			{
-				var currentSection = app.data.getCurrentSection(),
-					currentSectionIsWebmap = !! (currentSection && currentSection.media && currentSection.media.type == 'webmap' && currentSection.media.webmap),
-					currentSectionDefineExtent = !! (currentSectionIsWebmap ? currentSection.media.webmap.extent : null),
-					webmapId = currentSectionIsWebmap ? currentSection.media.webmap.id : null;
-					//webmapItemInfo = currentSectionIsWebmap && app.maps && app.maps[webmapId] && app.maps[webmapId].response ? app.maps[webmapId].response.itemInfo.item : null;
+				//var currentSection = app.data.getCurrentSection(),
+				//	currentSectionIsWebmap = !! (currentSection && currentSection.media && currentSection.media.type == 'webmap' && currentSection.media.webmap),
+				//	currentSectionDefineExtent = !! (currentSectionIsWebmap ? currentSection.media.webmap.extent : null),
+				//	webmapId = currentSectionIsWebmap ? currentSection.media.webmap.id : null;
+				//	webmapItemInfo = currentSectionIsWebmap && app.maps && app.maps[webmapId] && app.maps[webmapId].response ? app.maps[webmapId].response.itemInfo.item : null;
 
-				if ( ! currentSectionIsWebmap )
-					return;
+				//map.setExtent(extent);
 
-				if ( currentSectionDefineExtent )
-					topic.publish("CORE_UPDATE_EXTENT", new Extent(currentSection.media.webmap.extent));
-				else
-					topic.publish("CORE_UPDATE_EXTENT", app.maps[webmapId].response.map._params.extent /*CommonHelper.getWebMapExtentFromItem(webmapItemInfo)*/);
+				//if ( ! currentSectionIsWebmap )
+				//	return;
+
+				//if ( currentSectionDefineExtent )
+				//	topic.publish("CORE_UPDATE_EXTENT", new Extent(currentSection.media.webmap.extent));
+				//else
+				//	topic.publish("CORE_UPDATE_EXTENT", app.maps[webmapId].response.map._params.extent /*CommonHelper.getWebMapExtentFromItem(webmapItemInfo)*/);
+				topic.publish("CORE_UPDATE_EXTENT", extent);
 			}
 
 			this.prepareMobileViewSwitch = function()

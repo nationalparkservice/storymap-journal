@@ -1,5 +1,6 @@
 define(["lib-build/css!./MapCommand",
 		"dojo/has",
+		"dojo/_base/lang",
 		"esri/geometry/Point",
 		"dojo/on",
 		"esri/symbols/PictureMarkerSymbol",
@@ -8,7 +9,7 @@ define(["lib-build/css!./MapCommand",
 		"esri/config",
 		"./KeyNavigation"
 	],
-	function(viewCss, has, Point, on, PictureMarkerSymbol, GraphicsLayer, Graphic, esriConfig, KeyNav)
+	function(viewCss, has, lang, Point, on, PictureMarkerSymbol, GraphicsLayer, Graphic, esriConfig, KeyNav)
 	{
 		/**
 		 * MapCommand
@@ -19,6 +20,8 @@ define(["lib-build/css!./MapCommand",
 		 */
 		return function MapCommand(map, homeClickCallback, locationButtonCallback, locationButtonEnabled)
 		{
+			this.originalHomeExtent = map._params.extent;
+			this.currentHomeExtent = null;
 			//
 			// Home/wait button
 			//
@@ -27,16 +30,21 @@ define(["lib-build/css!./MapCommand",
 			var locateSymbol = new PictureMarkerSymbol('app/storymaps/common/_resources/icons/mapcommand-location-marker.png', 21, 21);
 			var locateLayer = new GraphicsLayer({id: 'locateLayer'});
 
-			homeButton.click(function(){
+			homeButton.on('click keydown', lang.hitch(this, function(evt) {
+				if (evt.type === 'keydown') {
+					if (evt.keyCode !== 32 && evt.keyCode !== 13) {
+						return;
+					}
+				}
 				// Prevent using the home button while it's spinning
 				if( tsUpdateStart !== 0 && $("body").hasClass("mobile-view") )
 					return;
 
 				if( homeClickCallback && typeof homeClickCallback == 'function' )
-					homeClickCallback(map._params.extent);
+					homeClickCallback(this.currentHomeExtent || this.originalHomeExtent);
 				else
-					map.setExtent(map._params.extent);
-			});
+					map.setExtent(this.currentHomeExtent || this.originalHomeExtent);
+			}));
 
 			$(map.container).find('.esriSimpleSlider div:nth-child(1)').after(homeButton);
 

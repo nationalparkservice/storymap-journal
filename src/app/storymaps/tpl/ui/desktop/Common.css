@@ -347,6 +347,14 @@ body[data-theme-major=black] .builder-content-panel .builder-content-panel-group
 	cursor: pointer;
 }
 
+/* since we moved the scroll button and made it a <button>, fix the styling */
+.sidePanel .scroll,
+.floatingPanel .scroll {
+	z-index: 1;
+	width: 100%;
+	border-style: none;
+}
+
 body.layout-side-left .sidePanel .scroll,
 body.layout-float-left .floatingPanel .scroll {
 	padding-left: 34px;

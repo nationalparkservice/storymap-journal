@@ -292,6 +292,7 @@
 
 .floatingSwiper .embed-btn-left.disabled .embed-btn {
 	background-position: 42px 0;
+	visibility: hidden;
 }
 
 /* Right button */
@@ -306,6 +307,7 @@
 
 .floatingSwiper .embed-btn-right.disabled .embed-btn {
 	background-position: 42px -42px;
+	visibility: hidden;
 }
 
 /* Expanded view navigation */
@@ -341,6 +343,7 @@
 
 .floatingSwiper .embed-btn2-left.disabled {
 	background-position: 42px 0;
+	visibility: hidden;
 }
 
 .floatingSwiper .embed-btn2-right {
@@ -349,6 +352,7 @@
 
 .floatingSwiper .embed-btn2-right.disabled {
 	background-position: 42px -42px;
+	visibility: hidden;
 }
 
 .floatingSwiper .expanded-close-embed .backmap2 {
