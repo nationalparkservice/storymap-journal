@@ -560,7 +560,7 @@ define(["lib-build/tpl!./FloatingPanelSection",
 
 			function onKeyboardEvent(e)
 			{
-				 /* jshint unused:vars */
+				/* jshint unused:vars */
 			}
 
 			/*

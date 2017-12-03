@@ -25,7 +25,7 @@ define(["dojo/topic",
 		 * Prepare all content that come from the rich text editor for display
 		 * (section title and content)
 		 */
-		function prepareEditorContent(str)
+		function prepareEditorContent(str, addTabIndex)
 		{
 			// Replace &nbsp; by a space space is not the only character of a tag
 			//  i.e. <p>&nbsp;<p> or <p class="foo">&nbsp;</p> is not changed but all others &nbsp; are replaced by a space
@@ -189,13 +189,6 @@ define(["dojo/topic",
 				scalePhotos: true,
 				maxWidth: '90%',
 				maxHeight: '90%',
-				// restore focus to where we came from (otherwise, focus is completely lost,
-				// and the user has to start over again). this will affect non-keyboard nav, and
-				// put the default focus ring around the fullscreen button on the image for all users
-				onClosed: function() {
-					imgNode.siblings('.btn-fullscreen').focus();
-					$('body').off('keydown');
-				},
 				onComplete: function() {
 					// trap focus in modal if you try to tab away from the close button
 					var closeBtn = $('#cboxClose');
