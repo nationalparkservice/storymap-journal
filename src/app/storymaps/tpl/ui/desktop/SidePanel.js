@@ -197,7 +197,10 @@ define(["lib-build/tpl!./SidePanelSection",
 			};
 
 			this.focusSection = function(index) {
-				container.find('.section').eq(index).find('.focus-mainstage').focus();
+				if (!index && index !== 0) {
+					index = _activeSectionIndex;
+				}
+				container.find('.section').eq(index).find('.title').focus();
 			};
 
 			this.getSectionNumber = function()
@@ -213,7 +216,7 @@ define(["lib-build/tpl!./SidePanelSection",
 			this.toggleSwitchBuilderButton = function(state)
 			{
 				var switchBuilderBtn = container.find('.switchBuilder')
-					.html('<span class="glyphicon glyphicon-cog"></span>' + i18n.viewer.headerFromCommon.builderButton + '<span aria-hidden="true" class="switch-builder-close">×</span>')
+					.html('<span aria-hidden="true" class="glyphicon glyphicon-cog"></span>' + i18n.viewer.headerFromCommon.builderButton + '<span aria-hidden="true" class="switch-builder-close">×</span>')
 					.off('click')
 					.click(CommonHelper.switchToBuilder)
 					.toggle(state);
@@ -316,7 +319,8 @@ define(["lib-build/tpl!./SidePanelSection",
 					content: StoryText.prepareEditorContent(content),
 					lblShare: i18n.viewer.headerFromCommon.share,
 					lblMainstageBtn: i18n.viewer.common.focusMainstage,
-					shareURL: shareURL
+					shareURL: shareURL,
+					titleTag: index === 0 ? 'h1' : 'h2'
 				});
 			}
 
@@ -356,6 +360,12 @@ define(["lib-build/tpl!./SidePanelSection",
 
 				_this.showSectionNumber(index, true, false);
 				navigationCallback(index);
+				// TODO: was wrapped in a timeout for last patch Dec 2017. internal bug 1086.
+				// find a better way to do this that doesn't involve a timeout.
+				// floatingpanel seems to not have this problem.
+				setTimeout(function() {
+					_this.focusSection(index);
+				}, 200);
 			}
 
 			function onClickSection()
@@ -579,6 +589,24 @@ define(["lib-build/tpl!./SidePanelSection",
 						$('.section .title').eq(0).focus();
 						container.find('.scroll').trigger('click');
 					}
+					$('body').on('keydown', function(e) {
+						if (e.keyCode === 9) {
+							$('body').addClass('user-is-tabbing');
+						}
+					});
+				});
+
+				// loop to top
+				container.find('.loop-to-top').on('click keydown', function(evt) {
+					if (evt.type === 'keydown') {
+						if (evt.keyCode === 9 && !evt.shiftKey) {
+							evt.preventDefault();
+						} else {
+							return;
+						}
+					}
+					_this.showSectionNumber(0);
+					_this.focusSection(0);
 				});
 
 				if ( isInBuilder )
