@@ -317,7 +317,7 @@ define(["lib-build/css!./MainView",
 				app.data.cleanSectionsNarrativeMarkup();
 
 				if ( storyIndexUrl )
-					storyIndex = storyIndexUrl - 1;
+					storyIndex = app.data.getAdjustedIndex(storyIndexUrl - 1);
 
 				if ( storyIndex >= storyLength )
 					storyIndex = 0;
