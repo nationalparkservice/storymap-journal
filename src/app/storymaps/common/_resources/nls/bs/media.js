@@ -12,7 +12,8 @@ define({
       "disabled": "Administrator je onemogućio ovu značajku.",
       "userLookup": "Učitaj albume",
       "notImplemented": "Još nije implementirano.",
-      "noData": "Nije pronađen javni album"
+      "noData": "Nije pronađen javni album",
+      "thirdPartyTerms": "Upotrebom usluge treće strane pristajete na njihove uvjete korištenja: "
     },
     "imageSelector": {
       "lblStep1": "Odaberite uslugu",
@@ -27,23 +28,14 @@ define({
       "lblDrop": "Ovdje ispustite sliku ili",
       "infoUpload": "Slike će se pohraniti u vašem ArcGIS računu i bit će dostupne samo unutar vaše priče.",
       "warningFileTypes": "Slika može biti .jpg, .png, .gif ili .bmp",
-      "warningOneFile": "Datoteke se prihvaćaju jedna po jedna.",
-      "warningFileSize": "Datoteka premašuje maksimalnu dozvoljenu veličinu za učitavanje. Izaberite drugu datoteku.",
+      "warningOneFile": "Istovremeno se može učitavati samo jedna slika.",
+      "warningFileSize": "Slika mora biti manja od 10 MB.",
       "tooltipRemove": "Izbrišite ovu neiskorištenu sliku s ArcGIS računa. <br> (Trebat ćete je ponovno učitati ako se odlučite kasnije je iskoristiti.)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Korisničko ime",
       "signInMsg2": "Korisnik nije pronađen",
       "loadingFailed": "Učitavanje nije uspješno"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Korisnik Facebooka",
-      "rightHeader": "Stranica Facebooka",
-      "pageExplain": "Stranica na Facebooku javni je brand/proizvod ili poznati subjekt kao <b>esrigis</b>. Možete vidjeti naziv stranice nakon '/' na URL-u stranice.",
-      "pageInputLbl": "Naziv stranice",
-      "lookupMsgError": "Stranica nije pronađena",
-      "warning": "Prekinuta je podrška za Facebook, ${learn}.",
-      "learn": "saznaj više"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "ID e-pošte ili Googlea",

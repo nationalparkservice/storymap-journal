@@ -12,7 +12,8 @@ define({
       "disabled": "Người quản trị đã vô hiệu hóa tính năng này",
       "userLookup": "Tải album",
       "notImplemented": "Chưa được thực hiện.",
-      "noData": "Không tìm thấy album công khai nào"
+      "noData": "Không tìm thấy album công khai nào",
+      "thirdPartyTerms": "Khi sử dụng dịch vụ của bên thứ ba, bạn đồng ý với các điều khoản dịch vụ của bên đó: "
     },
     "imageSelector": {
       "lblStep1": "Chọn dịch vụ",
@@ -27,23 +28,14 @@ define({
       "lblDrop": "Thả ảnh tại đây hoặc",
       "infoUpload": "Ảnh sẽ được lưu trong tài khoản ArcGIS và chỉ có thể truy cập bên trong câu chuyện của bạn.",
       "warningFileTypes": "Ảnh có thể ở định dạng .jpg, .png, .gif, hoặc .bmp",
-      "warningOneFile": "Chỉ chấp nhận một lần một tệp.",
-      "warningFileSize": "Tệp vượt quá kích thước tải lên tối đa cho phép. Vui lòng chọn tệp khác.",
+      "warningOneFile": "Mỗi lần chỉ có thể tải lên một hình ảnh.",
+      "warningFileSize": "Hình ảnh không được quá 10 MB.",
       "tooltipRemove": "Xóa ảnh không sử dụng này khỏi tài khoản ArcGIS. <br> (Bạn sẽ phải tải lại ảnh lên lại nếu muốn sử dụng nó sau này.)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Tên đăng nhập",
       "signInMsg2": "Không tìm thấy người dùng",
       "loadingFailed": "Tải thất bại"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Người dùng Facebook",
-      "rightHeader": "Trang Facebook",
-      "pageExplain": "Trang Facebook là một thương hiệu/sản phẩm công cộng hay nổi tiếng như <b>esrigis</b>. Bạn có thể lấy tên trang sau '/' đầu tiên trong URL trang.",
-      "pageInputLbl": "Tên trang",
-      "lookupMsgError": "Không tìm thấy trang",
-      "warning": "Hỗ trợ Facebook đã bị chấm dứt, ${learn}.",
-      "learn": "tìm hiểu thêm"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "ID Email hoặc Google",

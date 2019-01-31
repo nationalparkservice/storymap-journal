@@ -12,7 +12,8 @@ define({
       "disabled": "Fitur ini telah dinonaktifkan oleh Administrator",
       "userLookup": "Muat album",
       "notImplemented": "Belum diterapkan.",
-      "noData": "Album publik tidak ditemukan"
+      "noData": "Album publik tidak ditemukan",
+      "thirdPartyTerms": "Dengan menggunakan layanan pihak ketiga, berarti Anda menyetujui ketentuan layanannya: "
     },
     "imageSelector": {
       "lblStep1": "Pilih layanan",
@@ -27,23 +28,14 @@ define({
       "lblDrop": "Jatuhkan gambar di sini atau",
       "infoUpload": "Gambar akan disimpan di akun ArcGIS Anda dan dapat diakses hanya dari dalam cerita Anda.",
       "warningFileTypes": "Gambar dapat berupa .jpg, .png, .gif, atau .bmp",
-      "warningOneFile": "File diterima satu demi satu.",
-      "warningFileSize": "File melebihi ukuran maksimum yang diizinkan untuk diunggah. Harap pilih file lainnya.",
+      "warningOneFile": "Hanya satu gambar yang boleh diunggah dalam satu waktu.",
+      "warningFileSize": "Gambar harus lebih kecil dari 10 MB.",
       "tooltipRemove": "Hapus gambar yang tidak digunakan ini dari akun ArcGIS Anda. <br> (Anda harus mengunggahnya kembali jika memutuskan untuk menggunakannya nanti.)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Nama pengguna",
       "signInMsg2": "Pengguna tidak ditemukan",
       "loadingFailed": "Gagal memuat"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Pengguna Facebook",
-      "rightHeader": "Halaman Facebook",
-      "pageExplain": "Halaman Facebook seperti produk/merek publik atau selebriti seperti <b>esrigis</b>. Anda bisa mendapatkan nama halaman setelah '/' pertama di URL halaman.",
-      "pageInputLbl": "Nama halaman",
-      "lookupMsgError": "Halaman tidak ditemukan",
-      "warning": "Dukungan untuk Facebook telah dihentikan, ${learn}.",
-      "learn": "pelajari selengkapnya"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "ID email atau ID Google",

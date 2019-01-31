@@ -145,13 +145,24 @@ define({
     "httpsTransitionMessage": {
       "bannerMsg": "Istotny komunikat dotyczący bezpieczeństwa internetowego i aplikacji Story Maps (Mapy narracyjne)",
       "s1h1": "Firma Esri rozbudowuje zabezpieczenia map narracyjnych (Story Maps)",
-      "s1p1": "Mapy narracyjne funkcjonują w Internecie i społeczność internetowa stale pracuje nad opracowaniem i zaimplementowaniem lepszych zabezpieczeń. Protokół HTTPS, który udostępnia bezpieczne połączenie dla zasobów przesyłanych przez Internet, przedstawia się jako oczekiwany sposób dostępu do zasobów internetowych. Większość nowoczesnych przeglądarek obecnie wyświetla komunikaty ostrzegawcze, gdy jest używany protokół HTTP, a nie HTTPS. Z uwagi na ten nowoczesny standard, począwszy od aktualizacji usługi ArcGIS Online w czerwcu 2018 roku, mapy narracyjne będą wymagać użycia protokołu HTTPS.",
-      "s1p2": "W praktyce oznacza to, że dostęp do mapy narracyjnej i jej zasobów (w tym obrazów, warstw, osadzonych aplikacji i witryn internetowych) musi być uzyskiwany za pomocą łączy rozpoczynających się od HTTPS, a nie od HTTP. Jest to najlepsze rozwiązanie dla czytelników, ponieważ większość przeglądarek internetowych wskaże, że narracje są bezpieczne.",
+      "s1p1": "Mapy narracyjne funkcjonują w Internecie i społeczność internetowa stale pracuje nad opracowaniem i zaimplementowaniem lepszych zabezpieczeń. Protokół HTTPS, który udostępnia bezpieczne połączenie dla zasobów przesyłanych przez Internet, pojawia się jako oczekiwany sposób dostępu do zasobów internetowych Większość nowoczesnych przeglądarek obecnie wyświetla komunikaty ostrzegawcze, gdy jest używany protokół HTTP, a nie HTTPS. Z uwagi na ten nowy standard zdecydowanie zaleca się stosowanie łączy HTTPS podczas tworzenia i udostępniania map narracyjnych, a także używanie tylko adresów URL odwołujących się do protokołu HTTPS podczas osadzania zasobów internetowych lub łączenia się z obrazami zawartymi na mapie narracyjnej.",
+      "s1p2": "W praktyce oznacza to, że dostęp do mapy narracyjnej i jej zasobów (w tym obrazów, warstw, osadzonych aplikacji i witryn internetowych) powinien być uzyskiwany za pomocą łączy rozpoczynających się od HTTPS, a nie od HTTP. Jest to najlepsze rozwiązanie dla czytelników, ponieważ większość przeglądarek internetowych wskaże, że narracje są bezpieczne.",
       "s2h1": "Co mam zrobić?",
-      "s2p1": "Firma Esri pracuje nad tym, aby niniejsza zmiana w jak najmniejszym stopniu wpływała na pracę autorów i użytkowników map narracyjnych. Obecnie w kreatorach map narracyjnych i w elemencie Moje narracje są dostępne narzędzia pomagające znaleźć niezabezpieczone zasoby (HTTP) w narracjach i przedstawiające zalecenia dotyczące ich zmiany. Należy sprawdzić narracje pod kątem niezabezpieczonych zasobów i zaktualizować je do protokołu HTTPS przed upływem czerwca 2018 roku.",
+      "s2p1": "Firma Esri pracuje nad tym, aby niniejsza zmiana w jak najmniejszym stopniu wpływała na pracę autorów i użytkowników map narracyjnych. Obecnie w kreatorach map narracyjnych i w elemencie Moje narracje są dostępne narzędzia pomagające znaleźć niezabezpieczone zasoby (HTTP) w narracjach i przedstawiające zalecenia dotyczące sposobu odwoływania się do nich. Należy sprawdzić narracje pod kątem niezabezpieczonych zasobów i możliwie najszybciej zaktualizować je do protokołu HTTPS.",
       "action1": "Zamknij",
       "action2": "Sprawdź teraz moje narracje",
       "action3": "Dowiedz się więcej"
+    },
+    "embedBar": {
+      "share": "Udostępnij",
+      "fullScreen": "Pełny ekran",
+      "exitFullScreen": "Opuść tryb pełnoekranowy",
+      "enlarge": "Powiększ",
+      "newTab": "Otwórz w nowej karcie",
+      "tagline": "Mapa narracyjna"
+    },
+    "licenseChange2018": {
+      "noAccess": "Twoje konto (%USER_NAME%) nie jest licencjonowane do otwierania mapy narracyjnej, która nie jest publiczna. Poproś administratora instytucji o przypisanie typu użytkownika, który obejmuje licencję na mapy narracyjne lub licencję na kluczowe aplikacje dodatkowe."
     }
   }
 });

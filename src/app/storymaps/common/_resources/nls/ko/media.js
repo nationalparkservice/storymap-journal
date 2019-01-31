@@ -12,7 +12,8 @@ define({
       "disabled": "이 기능은 관리자가 사용하지 않도록 설정했습니다.",
       "userLookup": "앨범 불러오기",
       "notImplemented": "아직 구현되지 않았습니다.",
-      "noData": "공개 앨범을 찾을 수 없음"
+      "noData": "공개 앨범을 찾을 수 없음",
+      "thirdPartyTerms": "서드 파티 서비스를 사용하면 서비스 약관에 동의하는 것입니다. "
     },
     "imageSelector": {
       "lblStep1": "서비스 선택",
@@ -27,23 +28,14 @@ define({
       "lblDrop": "여기에 이미지를 드롭하거나",
       "infoUpload": "이미지가 ArcGIS에 저장되며 스토리 내에서만 접근할 수 있습니다.",
       "warningFileTypes": "이미지는.jpg, .png, .gif 또는 .bmp 형식이 가능함",
-      "warningOneFile": "한 번에 하나의 파일이 허용됩니다.",
-      "warningFileSize": "파일이 허용 가능한 최대 업로드 크기를 초과합니다. 다른 파일을 선택하세요.",
+      "warningOneFile": "한 번에 하나의 이미지만 업로드할 수 있습니다.",
+      "warningFileSize": "이미지는 10MB 미만이어야 합니다.",
       "tooltipRemove": "ArcGIS 계정에서 사용하지 않은 이 이미지를 삭제하세요. <br> 나중에 사용하기로 결정한 경우 다시 업로드해야 합니다."
     },
     "imageSelectorFlickr": {
       "userInputLbl": "사용자 이름",
       "signInMsg2": "사용자를 찾을 수 없습니다.",
       "loadingFailed": "불러오기 실패"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Facebook 사용자",
-      "rightHeader": "Facebook 페이지",
-      "pageExplain": "Facebook 페이지는 공용 브랜드/제품 또는 <b>esrigis</b>와 같은 유명 브랜드/제품입니다. 페이지 URL의 첫 번째 '/' 뒤에서 페이지 이름을 확인할 수 있습니다.",
-      "pageInputLbl": "페이지 이름",
-      "lookupMsgError": "페이지를 찾을 수 없음",
-      "warning": "Facebook 지원이 중단되었습니다. ${learn}",
-      "learn": "자세한 정보"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "이메일 또는 Google ID",

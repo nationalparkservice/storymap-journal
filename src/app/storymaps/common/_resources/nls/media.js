@@ -13,7 +13,8 @@ define({
 				disabled: "This feature has been disabled by the Administrator",
 				userLookup: "Load albums",
 				notImplemented: "Not implemented yet.",
-				noData: "No public album found"
+				noData: "No public album found",
+				thirdPartyTerms: "By using a third-party service, you agree to its terms of service: "
 			},
 			imageSelector: {
 				lblStep1: "Choose the service",
@@ -28,23 +29,14 @@ define({
 				lblDrop: "Drop an image here or",
 				infoUpload: "Images will be stored in your ArcGIS account and accessible only inside your story.",
 				warningFileTypes: "Image can be .jpg, .png, .gif, or .bmp",
-				warningOneFile: "One file accepted at a time.",
-				warningFileSize: "File exceeds maximum allowable upload size. Please choose another file.",
+				warningOneFile: "Only one image may be uploaded at a time.",
+				warningFileSize: "Image must be smaller than 10 MB.",
 				tooltipRemove: "Delete this unused image from your ArcGIS account. <br> (You'll need to upload it again if you decide to use it later.)"
 			},
 			imageSelectorFlickr: {
 				userInputLbl: "User name",
 				signInMsg2: "User not found",
 				loadingFailed: "Loading failed"
-			},
-			imageSelectorFacebook: {
-				leftHeader: "Facebook User",
-				rightHeader: "Facebook Page",
-				pageExplain: "A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the first '/' in the page URL.",
-				pageInputLbl: "Page name",
-				lookupMsgError: "Page not found",
-				warning: "Facebook support has been discontinued, ${learn}.",
-				learn: "learn more"
 			},
 			imageSelectorPicasa: {
 				userInputLbl: "Email or Google ID",
@@ -146,6 +138,7 @@ define({
 	}),
 	"ar": 1,
 	"bs": 1,
+	"ca": 1,
 	"cs": 1,
 	"da": 1,
 	"de": 1,
@@ -157,6 +150,7 @@ define({
 	"he": 1,
 	"hi": 1,
 	"hr": 1,
+	"hu": 1,
 	"id": 1,
 	"it": 1,
 	"ja": 1,

@@ -12,7 +12,8 @@ define({
       "disabled": "Questa feature è stata disabilitata dall'amministratore",
       "userLookup": "Carica album",
       "notImplemented": "Non ancora implementato.",
-      "noData": "Nessun album pubblico trovato"
+      "noData": "Nessun album pubblico trovato",
+      "thirdPartyTerms": "Utilizzando un servizio di terzi, si accettano i termini di servizio relativi: "
     },
     "imageSelector": {
       "lblStep1": "Scegli il servizio",
@@ -27,23 +28,14 @@ define({
       "lblDrop": "Rilasciare un'immagine qui o",
       "infoUpload": "Le immagini verranno memorizzate nell'account ArcGIS e saranno accessibili solo all'interno della storia.",
       "warningFileTypes": "L'immagine può essere un file con estensione .jpg, .png, .gif o .bmp.",
-      "warningOneFile": "È accettato un file alla volta.",
-      "warningFileSize": "Il file supera le dimensioni massime consentite per il caricamento. Scegliere un altro file.",
+      "warningOneFile": "È possibile caricare una sola immagine alla volta.",
+      "warningFileSize": "L’immagine deve essere inferiore a 10 MB.",
       "tooltipRemove": "Eliminare questa immagine non utilizzata dall'account ArcGIS. <br> Se si decide di utilizzarla in un secondo momento, sarà necessario caricarla di nuovo."
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Nome utente",
       "signInMsg2": "Utente non trovato",
       "loadingFailed": "Caricamento non riuscito"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Utente Facebook",
-      "rightHeader": "Pagina Facebook",
-      "pageExplain": "Una pagina Facebook è un marchio/prodotto pubblico o un personaggio pubblico come <b>esrigis</b>. È possibile ottenere il nome della pagina dopo il primo '/' nell'URL della pagina.",
-      "pageInputLbl": "Nome pagina",
-      "lookupMsgError": "Pagina non trovata",
-      "warning": "Il supporto Facebook è stato interrotto, ${learn}.",
-      "learn": "ulteriori informazioni"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-mail o ID Google",

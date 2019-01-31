@@ -12,7 +12,8 @@ define({
       "disabled": "Opcja ta została wyłączona przez Administratora",
       "userLookup": "Wczytaj albumy",
       "notImplemented": "Jeszcze nie wprowadzone",
-      "noData": "Nie znaleziono żadnych albumów publicznych"
+      "noData": "Nie znaleziono żadnych albumów publicznych",
+      "thirdPartyTerms": "Używając usługi innych producentów, zgadzasz się na warunki jej użytkowania: "
     },
     "imageSelector": {
       "lblStep1": "Wybierz usługę",
@@ -27,23 +28,14 @@ define({
       "lblDrop": "Upuść obraz tutaj lub",
       "infoUpload": "Obrazy zostaną zapisane na Twoim koncie na platformie ArcGIS i będą dostępne tylko w narracji.",
       "warningFileTypes": "Obraz może mieć format .jpg, .png, .gif lub .bmp",
-      "warningOneFile": "Akceptowany jest tylko jeden plik jednocześnie.",
-      "warningFileSize": "Plik przekracza maksymalną dozwoloną wielkość przesyłania. Wybierz inny plik.",
+      "warningOneFile": "Można przesyłać tylko jeden obraz na raz.",
+      "warningFileSize": "Obraz musi być mniejszy niż 10 MB.",
       "tooltipRemove": "Usuń nieużywany obraz z konta na platformie ArcGIS. <br> (Jeśli zechcesz ponownie go użyć w późniejszym czasie, konieczne będzie ponowne jego przesłanie)."
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Nazwa użytkownika",
       "signInMsg2": "Nie odnaleziono użytkownika",
       "loadingFailed": "Wczytywanie zakończyło się niepowodzeniem"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Użytkownik Facebook",
-      "rightHeader": "Strona Facebook",
-      "pageExplain": "Strona Facebook to publiczna strona marki/produktu lub znanej osoby, np.<b>esrigis</b>. Nazwa strony została umieszczona po pierwszym znaku „/” w adresie URL strony.",
-      "pageInputLbl": "Nazwa strony",
-      "lookupMsgError": "Nie znaleziono strony",
-      "warning": "Facebook nie jest już obsługiwany, ${learn}.",
-      "learn": "więcej informacji"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "Adres e-mail lub identyfikator z serwisu Google",

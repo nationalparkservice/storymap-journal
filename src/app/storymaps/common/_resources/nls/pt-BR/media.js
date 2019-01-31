@@ -12,7 +12,8 @@ define({
       "disabled": "Este recurso foi desabilitado pelo Administrador",
       "userLookup": "Carregar álbuns",
       "notImplemented": "Não implementado ainda.",
-      "noData": "Nenhum álbum público localizado"
+      "noData": "Nenhum álbum público localizado",
+      "thirdPartyTerms": "Ao utilizar um serviço de terceiros, você concorda com seus termos de serviço: "
     },
     "imageSelector": {
       "lblStep1": "Escolha o serviço",
@@ -27,23 +28,14 @@ define({
       "lblDrop": "Baixar uma imagem aqui ou",
       "infoUpload": "As imagens serão armazenadas na sua conta do ArcGIS e acessíveis somente dentro da sua história.",
       "warningFileTypes": "A imagem pode ser .jpg, .png, .gif, ou .bmp",
-      "warningOneFile": "Um arquivo aceito de cada vez.",
-      "warningFileSize": "O arquivo excede o tamanho de transferência máximo permitido. Escolha outro arquivo.",
+      "warningOneFile": "Somente uma imagem pode ser transferida de cada vez.",
+      "warningFileSize": "A imagem deve ser menor que 10 MB.",
       "tooltipRemove": "Exclua esta imagem não utilizada da sua conta do ArcGIS. <br> (Você precisará carregá-la novamente se você decidir utilizá-la posteriormente.)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Nome de usuário",
       "signInMsg2": "Usuário não encontrado",
       "loadingFailed": "Falha ao carregar"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Usuário do Facebook",
-      "rightHeader": "Página do Facebook",
-      "pageExplain": "A página do Facebook é um produto/marca pública ou figura pública como<b>esrigis</b>. Você pode obter um nome de página após o primeiro '/' na URL da página.",
-      "pageInputLbl": "Nome da página",
-      "lookupMsgError": "Página não encontrada",
-      "warning": "O suporte do Facebook foi descontinuado, ${learn}.",
-      "learn": "mais informações"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-mail ou ID do Google",

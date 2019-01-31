@@ -12,7 +12,8 @@ define({
       "disabled": "Den här funktionen har inaktiverats av administratören",
       "userLookup": "Läs in album",
       "notImplemented": "Inte infört ännu.",
-      "noData": "Inget offentligt album hittades"
+      "noData": "Inget offentligt album hittades",
+      "thirdPartyTerms": "Genom att använda en tredje parts tjänst samtycker du till dess användarvillkor: "
     },
     "imageSelector": {
       "lblStep1": "Välj tjänst",
@@ -27,23 +28,14 @@ define({
       "lblDrop": "Släpp en bild här eller",
       "infoUpload": "Bilderna lagras i ditt ArcGIS-konto och är endast tillgängliga i din berättelse.",
       "warningFileTypes": "Bilden kan vara .jpg, .png, .gif eller .bmp",
-      "warningOneFile": "En fil i taget accepteras.",
-      "warningFileSize": "Filen överstiger maximal tillåten storlek för överföring. Välj en annan fil.",
+      "warningOneFile": "Bara en bild i taget kan överföras.",
+      "warningFileSize": "Bilden måste vara mindre än 10 MB.",
       "tooltipRemove": "Ta bort den här bilden som inte används från ditt ArcGIS-konto. <br> (Du behöver kanske överföra den igen om du bestämmer dig för att använda den senare.)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Användarnamn",
       "signInMsg2": "Det gick inte att hitta användaren",
       "loadingFailed": "Det gick inte att läsa in"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Facebook-användare",
-      "rightHeader": "Facebook-sida",
-      "pageExplain": "En Facebook-sida är ett offentligt varumärke/produkt eller en kändis, till exempel <b>esrigis</b>. Du kan hitta sidnamnet efter det första '/'-tecknet i sidans webbadress.",
-      "pageInputLbl": "Sidnamn",
-      "lookupMsgError": "Det gick inte att hitta sidan",
-      "warning": "Facebook-stödet har avslutats, ${learn}.",
-      "learn": "läs mer"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-post- eller Google-ID",

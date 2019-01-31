@@ -12,7 +12,8 @@ define({
       "disabled": "Acest obiect spaţial a fost dezactivat de administrator",
       "userLookup": "Încărcare albume",
       "notImplemented": "Neimplementat încă.",
-      "noData": "Nu a fost găsit niciun album public"
+      "noData": "Nu a fost găsit niciun album public",
+      "thirdPartyTerms": "Utilizând un serviciu terț, sunteți de acord cu termenii săi asociați serviciilor: "
     },
     "imageSelector": {
       "lblStep1": "Alegere serviciu",
@@ -27,23 +28,14 @@ define({
       "lblDrop": "Fixaţi o imagine aici sau",
       "infoUpload": "Imaginile vor fi stocate în contul ArcGIS şi vor fi accesibile doar în relatarea dvs.",
       "warningFileTypes": "Imaginile pot fi .jpg, .png, .gif sau .bmp",
-      "warningOneFile": "Câte un fişier acceptat pe rând.",
-      "warningFileSize": "Fişierul depăşeşte dimensiunea maximă permisă de încărcare. Alegeţi un alt fişier.",
+      "warningOneFile": "Se poate încărca o singură imagine în același timp.",
+      "warningFileSize": "Imaginea trebuie să aibă mai puțin de 10 MB.",
       "tooltipRemove": "Ştergeţi această imagine neutilizată din contul ArcGIS. <br> (Va trebui să o încărcaţi din nou dacă decideţi să o utilizaţi mai târziu.)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Nume utilizator",
       "signInMsg2": "Utilizator negăsit",
       "loadingFailed": "Încărcare eşuată"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Utilizator Facebook",
-      "rightHeader": "Pagină Facebook",
-      "pageExplain": "O pagină de Facebook este o marcă sau un produs public sau o celebritate precum <b>esrigis</b>. Puteţi prelua numele paginii după primul caracter „/” din URL-ul paginii.",
-      "pageInputLbl": "Nume pagină",
-      "lookupMsgError": "Pagină negăsită",
-      "warning": "Asistenţa Facebook a fost suspendată, ${learn}.",
-      "learn": "aflaţi mai multe"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-mail sau ID Google",

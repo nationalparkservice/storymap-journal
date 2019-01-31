@@ -12,7 +12,8 @@ define({
       "disabled": "Administrator je onemogočil to funkcionalnost",
       "userLookup": "Naloži albume",
       "notImplemented": "Ni še uveljavljeno.",
-      "noData": "Javni albumi niso najdeni"
+      "noData": "Javni albumi niso najdeni",
+      "thirdPartyTerms": "Z uporabo storitve tretje osebe se strinjate z njenimi pogoji storitve: "
     },
     "imageSelector": {
       "lblStep1": "Izberite storitev",
@@ -27,23 +28,14 @@ define({
       "lblDrop": "Odložite sliko tukaj ali",
       "infoUpload": "Slike bodo shranjene v vašem računu ArcGIS in dostopne samo znotraj vaše zgodbe.",
       "warningFileTypes": "Slika je lahko .jpg, .png, .gif, ali .bmp",
-      "warningOneFile": "Datoteke se sprejemajo posamično.",
-      "warningFileSize": "Datoteka presega maksimalno dovoljeno velikost nalaganja. Izberite drugo datoteko.",
+      "warningOneFile": "Istočasno je mogoče naložiti samo eno sliko.",
+      "warningFileSize": "Slika mora biti manjša od 10 MB.",
       "tooltipRemove": "Izbrišite neuporabljeno sliko z računa ArcGIS. <br> (Če se boste kasneje odločili za uporabo, jo boste morali znova naložiti.)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Uporabniško ime",
       "signInMsg2": "Uporabnik ni najden",
       "loadingFailed": "Nalaganje ni uspelo"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Uporabnik Facebooka",
-      "rightHeader": "Facebook stran",
-      "pageExplain": "Facebook stran je javna blagovna znamka/izdelek ali znani subjekt, kot je <b>esrigis</b>. Ime strani vidite po prvem znaku »/« v URL-ju strani.",
-      "pageInputLbl": "Ime strani",
-      "lookupMsgError": "Stran ni najdena",
-      "warning": "Podpora za Facebook je opuščena, ${learn}.",
-      "learn": "Izvedite več"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-pošta ali ID za Google",

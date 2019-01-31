@@ -145,13 +145,24 @@ define({
     "httpsTransitionMessage": {
       "bannerMsg": "Viktigt meddelande om webbsäkerhet och Story Maps",
       "s1h1": "Esri höjer säkerheten för Story Maps",
-      "s1p1": "Story Maps live på webben och vårt webbforum arbetar ständigt med att etablera och implementera bättre säkerhetsfunktioner. HTTPS, som ger en säker anslutning för överföring av innehåll via internet, börjar bli standard för åtkomst till webbinnehåll. De flesta moderna webbläsare visar nu varningsmeddelanden när HTTP används istället för HTTPS. Efter att vi har gått över till denna nya standard, vilket påbörjas vid uppdateringen av ArcGIS Online i juni 2018, kommer dina Story Maps att behöva använda HTTPS.",
+      "s1p1": "Story Maps live på webben och vårt webbforum arbetar ständigt med att etablera och implementera bättre säkerhetsfunktioner. HTTPS, som ger en säker anslutning för överföring av innehåll via internet, börjar bli standard för åtkomst till webbinnehåll. De flesta moderna webbläsare visar nu varningsmeddelanden när HTTP används istället för HTTPS. På grund av denna framväxande standard rekommenderar vi starkt att du använder HTTPS-länkar när du skapar och delar Story Maps, och att du bara använder HTTPS-URL:er när du bäddar in webbmaterial eller länkar till bilder i en Story Map.",
       "s1p2": "I praktiken innebär detta att man för att få åtkomst till en Story Map och allt dess innehåll (inklusive bilder, lager, inbäddade appar och webbplatser) måste använda länkar som börjar med HTTPS istället för HTTP. Detta ger dina läsare den bästa upplevelsen, eftersom de flesta webbläsare kommer att ange att dina berättelser är säkra.",
       "s2h1": "Vad behöver jag göra?",
-      "s2p1": "Esri strävar efter att förenkla övergången för författare och läsare av Story Maps. Vi erbjuder verktyg som hjälper dig att hitta osäkert innehåll (HTTP) i dina berättelser och ger råd om hur du ska hantera det. Dessa finns nu tillgängliga i byggverktyget för Story Map och Mina berättelser. Kontrollera om dina berättelser har osäkert innehåll och uppdatera till HTTPS före juni 2018.",
+      "s2p1": "Esri strävar efter att förenkla övergången för författare och läsare av Story Maps. Vi erbjuder verktyg som hjälper dig att hitta osäkert innehåll (HTTP) i dina berättelser och ger råd om hur du ska hantera det. Dessa finns nu tillgängliga i byggverktyget för Story Map och Mina berättelser. Kontrollera om dina berättelser har osäkert innehåll och uppdatera till HTTPS så snart som möjligt.",
       "action1": "Stäng",
       "action2": "Kontrollera mina berättelser nu",
       "action3": "Läs mer"
+    },
+    "embedBar": {
+      "share": "Dela",
+      "fullScreen": "Helskärm",
+      "exitFullScreen": "Avsluta helskärmsläge",
+      "enlarge": "Förstora",
+      "newTab": "Öppna i en ny flik",
+      "tagline": "En Story Map"
+    },
+    "licenseChange2018": {
+      "noAccess": "Ditt konto (%USER_NAME%) har ingen licens för att öppna en Story Map som inte är tillgänglig för allmänheten. Be din organisations administratör att tilldela dig en användartyp som omfattar Story Maps eller en tilläggslicens för Essential Apps."
     }
   }
 });

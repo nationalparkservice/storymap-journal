@@ -12,7 +12,8 @@ define({
       "disabled": "管理員已停用此功能",
       "userLookup": "載入圖片集",
       "notImplemented": "尚未實作。",
-      "noData": "未找到公開圖片集"
+      "noData": "未找到公開圖片集",
+      "thirdPartyTerms": "使用協力廠商服務時，即表示您同意其服務條款。 "
     },
     "imageSelector": {
       "lblStep1": "選擇服務",
@@ -27,23 +28,14 @@ define({
       "lblDrop": "在這裡放置圖片，或",
       "infoUpload": "圖片將儲存在您的 ArcGIS 帳號中，並可在您的故事中存取。",
       "warningFileTypes": "圖片可為 .jpg、.png、.gif 或 .bmp",
-      "warningOneFile": "一次接受一個檔案。",
-      "warningFileSize": "檔案超過允許的上傳大小上限。請選擇其他檔案。",
+      "warningOneFile": "一次只能上傳一張圖片。",
+      "warningFileSize": "圖片必須小於 10 MB。",
       "tooltipRemove": "從您的 ArcGIS 帳號刪除此未使用的圖片 <br>(如果決定稍後使用它，您將需要重新上傳它)。"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "使用者名稱",
       "signInMsg2": "未找到使用者",
       "loadingFailed": "載入失敗"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Facebook 使用者",
-      "rightHeader": "Facebook 頁面",
-      "pageExplain": "Facebook 頁面屬￿公開品牌/產品或像 <b>esrigis</b> 一樣的名品。您可以在 URL 頁面的第一個 '/' 後面取得頁面名稱。",
-      "pageInputLbl": "頁面名稱",
-      "lookupMsgError": "未找到頁面",
-      "warning": "Facebook 支援已中斷，${learn}。",
-      "learn": "瞭解詳細資訊"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "電子郵件或 Google ID",

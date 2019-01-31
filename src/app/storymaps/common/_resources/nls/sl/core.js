@@ -145,13 +145,24 @@ define({
     "httpsTransitionMessage": {
       "bannerMsg": "Pomembno sporočilo o spletni varnosti in kartah z zgodbo",
       "s1h1": "Esri izboljšuje varnost kart z zgodbo",
-      "s1p1": "Vaše karte z zgodbo živijo na spletu in spletna skupnost si nenehno prizadeva za vzpostavitev in izvajanje boljše varnosti. HTTPS, ki zagotavlja varno povezavo za vsebino, preneseno prek interneta, se pojavlja kot pričakovani način za dostop do spletnih vsebin. Večina sodobnih brskalnikov sedaj prikazuje opozorilna sporočila, ko je namesto HTTPS uporabljen HTTP. Zaradi tega nastajajočega standarda, ki bo stopil v veljavo junija 2018 s posodobitvijo ArcGIS Online, bodo vaše karte z zgodbo morale uporabljati HTTPS.",
-      "s1p2": "Praktično gledano to pomeni, da bo do karte z zgodbo in vseh njenih vsebin (vključno s slikami, sloji, vdelanimi aplikacijami in spletnimi stranmi) treba dostopati s pomočjo povezav, ki se začnejo s HTTPS in ne s HTTP. To zagotavlja najboljšo izkušnjo vašim bralcem, saj bo večina brskalnikov označevala, da so vaše zgodbe varne.",
+      "s1p1": "Vaše karte z zgodbo živijo na spletu in spletna skupnost si nenehno prizadeva za vzpostavitev in izvajanje boljše varnosti. HTTPS, ki zagotavlja varno povezavo za vsebino, preneseno prek interneta, se pojavlja kot pričakovani način za dostop do spletnih vsebin. Večina sodobnih brskalnikov sedaj prikazuje opozorilna sporočila, ko je namesto HTTPS uporabljen HTTP. Zaradi tega nastajajočega standarda vam toplo priporočamo, da uporabljate povezave HTTPS za izdelavo in deljenje Kart z zgodbo, in uporabite URL-je HTTPS samo pri vdelavi spletne vsebine ali povezovanju s slikami znotraj Karte z zgodbo.",
+      "s1p2": "Praktično gledano to pomeni, da bo do Karte z zgodbo in vseh njenih vsebin (vključno s slikami, sloji, vdelanimi aplikacijami in spletnimi stranmi) treba dostopati s pomočjo povezav, ki se začnejo s HTTPS in ne s HTTP. To zagotavlja najboljšo izkušnjo vašim bralcem, saj bo večina brskalnikov označevala, da so vaše zgodbe varne.",
       "s2h1": "Kaj moram storiti?",
-      "s2p1": "Podjetje Esri si prizadeva, da bo to enostaven prehod za avtorje in bralce kart z zgodbo. Sedaj so na voljo orodja v graditeljih kart z zgodbo in mojih zgodbah, ki vam pomagajo najti negotovo vsebino (HTTP) v vaših zgodbah in zagotavljajo priporočila, kako jih obravnavati. Preverite vaše zgodbe za negotovo vsebino in posodobite na HTTPS pred junijem 2018.",
+      "s2p1": "Podjetje Esri si prizadeva, da bo to enostaven prehod za avtorje in bralce Kart z zgodbo. Sedaj so na voljo orodja v graditeljih Kart z zgodbo in Mojih zgodbah, ki vam pomagajo najti nezavarovano vsebino (HTTP) v vaših zgodbah in zagotavljajo priporočila, kako jih obravnavati. Preverite vaše zgodbe za nezavarovano vsebino in čim prej posodobite na HTTPS.",
       "action1": "Trenutna drsnica",
       "action2": "Preveri moje zgodbe zdaj",
       "action3": "Izvedi več"
+    },
+    "embedBar": {
+      "share": "Deli",
+      "fullScreen": "Celozaslonski način",
+      "exitFullScreen": "Izhod iz celozaslonskega načina",
+      "enlarge": "Povečaj",
+      "newTab": "Odpri v novem zavihku",
+      "tagline": "Karta z zgodbo"
+    },
+    "licenseChange2018": {
+      "noAccess": "Vaš račun (%USER_NAME%) ni licenciran za odpiranje Karte z zgodbo, ki ni javna. Prosite administratorja v vaši organizaciji, da vam dodeli vrsto uporabnika, ki vsebuje aplikacije Karto z zgodbo ali licenco za dodatne aplikacije Essential Apps."
     }
   }
 });

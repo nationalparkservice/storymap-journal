@@ -145,13 +145,24 @@ define({
     "httpsTransitionMessage": {
       "bannerMsg": "Thông báo quan trọng về Bảo mật web và Story Maps",
       "s1h1": "Esri đang ngày càng làm tăng cường độ bảo mật cho Story Maps",
-      "s1p1": "Story Maps của bạn đang hoạt động trên nền web và cộng đồng web vẫn luôn nỗ lực để thiết lập và thực thi bảo mật được tốt hơn. Giao thức HTTPS cung cấp kết nối bảo mật để truyền tải nội dung qua internet, nó đang là phương thức tốt để truy cập nội dung web. Hiện nay, hầu hết các trình duyệt hiện đại đều hiển thị thông báo cảnh báo khi sử dụng HTTP thay vì HTTPS. Trong tình hình tiêu chuẩn này ngày càng được mở rộng, Story Maps sẽ cần được sử dụng thông qua HTTPS kể từ tháng 6 năm 2018 trên ArcGIS Online.",
-      "s1p2": "Xét về khía cạnh thực tế, điều này có nghĩa là phải truy cập vào Story Map và nội dung của nó (như hình ảnh, lớp dữ liệu, ứng dụng được nhúng vào và trang web) bằng cách sử dụng liên kết bắt đầu với HTTPS thay vì HTTP. Điều này đảm bảo mang đến trải nghiệm tốt hơn cho người xem bởi câu chuyện của bạn sẽ bảo mật hơn khi mở trên các trình duyệt web.",
+      "s1p1": "Story Map của bạn hiển thị trực tiếp trên web, và cộng đồng web luôn nỗ lực để xây dựng và triển khai bảo mật tốt hơn. HTTPS vốn là một kết nối bảo mật dành cho nội dung được truyền qua internet, đây là một phương thức được mong đợi để truy cập vào nội dung web. Các trình duyệt hiện đại nhất giờ đây đều hiển thị thông tin cảnh báo khi phát hiện việc sử dụng HTTP thay vì HTTPS. Vì đây là tiêu chuẩn mới, chúng tôi khuyến cáo bạn nên sử dụng các liên kết HTTPS để tạo và chia sẻ Story Map, và chỉ sử dụng URL HTTPS khi nhúng nội dung web hoặc đường dẫn vào hình ảnh trong một Story Map.",
+      "s1p2": "Trên thực tế, điều này có nghĩa là nên truy cập Story Map và tất cả nội dung trong đó (bao gồm hình ảnh, các lớp, ứng dụng và trang web được nhúng vào) bằng các liên kết bắt đầu bằng HTTPS thay vì HTTP. Điều này đảm bảo mang đến trải nghiệm tốt nhất cho người xem bởi vì hầu hết các trình duyệt web sẽ cho biết rằng câu chuyện của bạn đã được bảo mật.",
       "s2h1": "Bạn cần làm gì?",
-      "s2p1": "Esri đang nỗ lực làm việc để giúp bước chuyển tiếp được dễ dàng hơn cho các tác giả và người xem của ứng dụng Story Maps. Các công cụ hiện đã có sẵn trong Bộ thiết lập Story Map và phần Câu chuyện của tôi sẽ giúp bạn tìm thấy nội dung không bảo mật (HTTP) trong câu chuyện của mình và đưa ra những khuyến nghị về cách xử lý vấn đề. Vui lòng kiểm tra câu chuyện của bạn để tìm ra nội dung nào không bảo mật và cập nhật thành HTTPS trước tháng 6 năm 2018.",
+      "s2p1": "Esri đang nỗ lực để biến điều này thành bước chuyển tiếp đơn giản đối với tác giả và người xem Story Map. Các công cụ hiện có sẵn trong trình dựng Story Map và My Stories sẽ giúp bạn tìm kiếm nội dung không bảo mật (HTTP) trong các câu chuyện của bạn đồng thời đưa ra khuyến nghị về cách xử lý vấn đề. Vui lòng kiểm tra các câu chuyện của bạn để tìm kiếm nội dung không bảo mật và cập nhật thành HTTPS sớm nhất có thể.",
       "action1": "Đóng",
       "action2": "Kiểm tra câu chuyện của tôi ngay",
       "action3": "Tìm hiểu thêm"
+    },
+    "embedBar": {
+      "share": "Chia sẻ",
+      "fullScreen": "Toàn màn hình",
+      "exitFullScreen": "Thoát chế độ toàn màn hình",
+      "enlarge": "Phóng to",
+      "newTab": "Mở trong tab mới",
+      "tagline": "Story Map"
+    },
+    "licenseChange2018": {
+      "noAccess": "Tài khoản của bạn (%USER_NAME%) không được cấp phép để mở ứng dụng Story Map mà không được chia sẻ công khai. Vui lòng yêu cầu quản trị viên của tổ chức bạn gán cho bạn loại người dùng nào có bao gồm việc sử dụng Story Maps hoặc có giấy phép sử dụng các ứng dụng thiết yếu bổ trợ."
     }
   }
 });

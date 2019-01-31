@@ -12,7 +12,8 @@ define({
       "disabled": "Esta funcionalidade foi desativada pelo Admnistrador",
       "userLookup": "Carregar álbuns",
       "notImplemented": "Ainda não implementado.",
-      "noData": "Não há vídeos públicos encontrados"
+      "noData": "Não há vídeos públicos encontrados",
+      "thirdPartyTerms": "Ao utilizar um serviço de terceiros, concorda com os respetivos termos de serviço: "
     },
     "imageSelector": {
       "lblStep1": "Escolha o serviço",
@@ -27,23 +28,14 @@ define({
       "lblDrop": "Soltar uma imagem aqui ou",
       "infoUpload": "As imagens serão armazenadas na sua conta ArcGIS e estarão acessíveis apenas dentro da sua história.",
       "warningFileTypes": "A imagem pode encontrar-se nos formatos .jpg, .png, .gif, ou .bmp",
-      "warningOneFile": "Um ficheiro aceite de cada vez.",
-      "warningFileSize": "O ficheiro excede o tamanho máximo permitido para carregamento. Por favor, selecione outro ficheiro.",
+      "warningOneFile": "Apenas é possível carregar uma imagem de cada vez.",
+      "warningFileSize": "A imagem tem de ser de tamanho inferior a 10 MB.",
       "tooltipRemove": "Elimine esta imagem não-utilizada da sua conta ArcGIS. <br> (Terá de carregá-la novamente caso decida utilizá-la mais tarde.)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Nome de utilizador",
       "signInMsg2": "Utilizador não encontrado",
       "loadingFailed": "Carregamento falhou"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Utilizador do Facebook",
-      "rightHeader": "Página do Facebook",
-      "pageExplain": "Uma página do Facebook é uma celebridade ou marca/produto público, como <b>esrigis</b>. Pode obter o nome da página após a primeira barra ( / ) no URL da página.",
-      "pageInputLbl": "Nome da página",
-      "lookupMsgError": "Página não encontrada",
-      "warning": "O suporte para Facebook foi descontinuado, ${learn}.",
-      "learn": "saber mais"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "Email ou ID do Google",

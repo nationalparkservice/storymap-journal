@@ -12,7 +12,8 @@ define({
       "disabled": "Šo funkciju administrators ir atspējojis",
       "userLookup": "Ielādēt albumus",
       "notImplemented": "Vēl nav ieviests.",
-      "noData": "Nav atrasts publisks albums"
+      "noData": "Nav atrasts publisks albums",
+      "thirdPartyTerms": "Izmantojot šo trešās puses pakalpojumu, jūs piekrītat tā lietošanas noteikumiem. "
     },
     "imageSelector": {
       "lblStep1": "Izvēlēties servisu",
@@ -27,23 +28,14 @@ define({
       "lblDrop": "Nometiet attēlu šeit vai",
       "infoUpload": "attēli tiks glabāti jūsu ArcGIS kontā un būs pieejami tikai jūsu stāstā.",
       "warningFileTypes": "Attēla formāts var būt .jpg, .png, .gif vai .bmp",
-      "warningOneFile": "Vienā reizē tiek pieņemts viens fails.",
-      "warningFileSize": "Fails pārsniedz maksimālo pieļaujamo augšupielādes izmēru. Izvēlieties citu failu.",
+      "warningOneFile": "Vienā reizē var augšupielādēt tikai vienu attēlu.",
+      "warningFileSize": "Attēla izmērs nedrīkst pārsniegt 10 MB.",
       "tooltipRemove": "Izdzēsiet šo neizmantoto attēlu no ArcGIS konta. <br> (Ja izlemsiet to izmantot vēlāk, to būs nepieciešams augšupielādēt vēlreiz.)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Lietotāja vārds",
       "signInMsg2": "Lietotājs nav atrasts",
       "loadingFailed": "Ielāde neizdevās"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Facebook Lietotājs",
-      "rightHeader": "Facebook Lapa",
-      "pageExplain": "Facebook lapa ir publisks zīmols/produkts vai slavenība, piem., <b>esrigis</b>. Jūs varat saņemt lapas nosaukumu, pēc pirmās '/' lapas URL.",
-      "pageInputLbl": "Lapas nosaukums",
-      "lookupMsgError": "Lapa nav atrasta",
-      "warning": "Facebook atbalsts ir pārtraukts, ${learn}.",
-      "learn": "uzzināt vairāk"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-pasts vai Google ID",

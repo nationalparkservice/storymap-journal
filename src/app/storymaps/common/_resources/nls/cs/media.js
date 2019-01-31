@@ -12,7 +12,8 @@ define({
       "disabled": "Tato funkce byla zakázána administrátorem.",
       "userLookup": "Nahrát alba",
       "notImplemented": "Dosud není implementováno.",
-      "noData": "Nebylo nalezeno žádné veřejné album."
+      "noData": "Nebylo nalezeno žádné veřejné album.",
+      "thirdPartyTerms": "Použitím služby třetí strany souhlasíte s jejími podmínkami: "
     },
     "imageSelector": {
       "lblStep1": "Vyberte službu.",
@@ -27,23 +28,14 @@ define({
       "lblDrop": "Přetáhněte sem obrázek",
       "infoUpload": "Obrázky se uloží do vašeho účtu ArcGIS a bude možné k nim přistupovat pouze ve vašem příběhu.",
       "warningFileTypes": "Lze použít obrázky ve formátech .jpg, .png, .gif a .bmp.",
-      "warningOneFile": "Soubory je nutné nahrávat po jednom.",
-      "warningFileSize": "Velikost souboru přesahuje maximální povolenou velikost přílohy. Zvolte jiný soubor.",
+      "warningOneFile": "V jednu chvíli lze nahrát pouze jeden obrázek.",
+      "warningFileSize": "Obrázek musí být menší než 10 MB.",
       "tooltipRemove": "Odstraňte tento nepoužitý obrázek z účtu ArcGIS. <br> (Rozhodnete-li se obrázek později použít, bude nutné ho znovu nahrát.)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Uživatelské jméno",
       "signInMsg2": "Uživatel nenalezen",
       "loadingFailed": "Nahrávání se nezdařilo."
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Uživatel služby Facebook",
-      "rightHeader": "Stránka služby Facebook",
-      "pageExplain": "Stránka služby Facebook představuje veřejnou značku či službu nebo známou osobnost, jako je například <b>esrigis</b>. Název stránky začíná za prvním lomítkem (/) v URL adrese stránky.",
-      "pageInputLbl": "Název stránky",
-      "lookupMsgError": "Stránka nenalezena",
-      "warning": "Podpora Facebooku byla ukončena, ${learn}.",
-      "learn": "další informace"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-mail nebo identifikátor Google",

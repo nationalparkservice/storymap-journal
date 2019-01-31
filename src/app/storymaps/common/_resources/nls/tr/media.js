@@ -12,7 +12,8 @@ define({
       "disabled": "Bu özellik Yönetici tarafından devre dışı bırakıldı",
       "userLookup": "Albüm yükle",
       "notImplemented": "Henüz uygulanmadı.",
-      "noData": "Hiçbir genel albüm bulunamadı"
+      "noData": "Hiçbir genel albüm bulunamadı",
+      "thirdPartyTerms": "Bir üçüncü parti hizmetini kullanarak, hizmet şartlarını kabul etmiş olursunuz: "
     },
     "imageSelector": {
       "lblStep1": "Servisi seç",
@@ -27,23 +28,14 @@ define({
       "lblDrop": "Buraya bir görüntü bırakın veya",
       "infoUpload": "Görüntüler ArcGIS hesabınızda saklanır ve yalnızca hikayenizin içinden erişilebilir.",
       "warningFileTypes": "Görüntü .jpg, .png, .gif veya .bmp olabilir",
-      "warningOneFile": "Tek seferde bir dosya onaylanır.",
-      "warningFileSize": "Dosya izin verilen yükleme boyutu üst sınırını aştı. Başka bir dosya seçin.",
+      "warningOneFile": "Bir seferde sadece bir görüntü yüklenebilir.",
+      "warningFileSize": "Görüntü 10 MB’den küçük olmalıdır.",
       "tooltipRemove": "Kullanılmayan bu görüntüyü ArcGIS hesabınızdan silin. <br> (Daha sonra kullanmak isterseniz, dosyayı yeniden yüklemeniz gerekir.)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Kullanıcı adı",
       "signInMsg2": "Kullanıcı bulunamadı",
       "loadingFailed": "Yükleme başarısız"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Facebook Kullanıcısı",
-      "rightHeader": "Facebook Sayfası",
-      "pageExplain": "Facebook sayfası, <b>esrigis</b> gibi genel bir marka/ürün veya ünlü kişiliktir. Sayfa adını sayfa URL'sindeki ilk '/' karakterinden alabilirsiniz.",
-      "pageInputLbl": "Sayfa adı",
-      "lookupMsgError": "Sayfa bulunamadı",
-      "warning": "Facebook desteği artık verilmemektedir, ${learn}.",
-      "learn": "daha fazla bilgi"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-posta veya Google ID",

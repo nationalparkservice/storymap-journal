@@ -145,13 +145,24 @@ define({
     "httpsTransitionMessage": {
       "bannerMsg": "Mensagem Importante acerca de Segurança na Web e Story Maps",
       "s1h1": "A Esri está a melhorar a segurança dos Story Maps",
-      "s1p1": "Os seus Story Maps existem na web, e a comunidade da web está sempre a trabalhar para estabelecer e implementar melhor segurança. HTTPS, que fornece uma ligação segura para conteúdo transmitido através da Internet, está a emergir como modo habitual de aceder a conteúdo web. A maioria dos navegadores modernos exibe agora mensagens de aviso quando é utilizado HTTP ao invés de HTTPS. Devido a esta norma emergente, a partir da atualização de junho de 2018 ao ArcGIS Online, será necessário que os seus Story Maps utilizem HTTPS.",
-      "s1p2": "Em termos práticos, isto significa que um Story Map e todo o respetivo conteúdo (incluindo imagens, camadas, aplicações incorporadas e sites web) tem de ser acedido através de ligações que começam com HTTPS ao invés de HTTP. Isto garante uma experiência de maior qualidade para os seus leitores, já que a maioria dos navegadores web indicarão que as suas histórias são seguras.",
+      "s1p1": "Os seus Story Maps existem na web, e a comunidade da web está sempre a trabalhar para estabelecer e implementar melhor segurança. HTTPS, que fornece uma ligação segura para conteúdo transmitido através da Internet, está a emergir como modo habitual de aceder a conteúdo web. A maioria dos navegadores modernos exibe agora mensagens de aviso quando é utilizado HTTP ao invés de HTTPS. Devido a este padrão emergente, recomendamos vivamente que utilize ligações HTTPS para criar e partilhar Story Maps, e que apenas utilize URLs HTTPS ao incorporar conteúdo da web ou ao estabelecer ligações a imagens num Story Map.",
+      "s1p2": "Em termos práticos, isto significa que um Story Map e todo o respetivo conteúdo (incluindo imagens, camadas, aplicações incorporadas e sites web) deve ser acedido através de ligações que começam com HTTPS ao invés de HTTP. Isto garante uma experiência de maior qualidade para os seus leitores, já que a maioria dos navegadores web indicarão que as suas histórias são seguras.",
       "s2h1": "O que tenho de fazer?",
-      "s2p1": "A Esri está a trabalhar para que esta transição seja simples para autores e leitores de Story Maps. Encontram-se agora disponíveis ferramentas, nos builders de Story Maps e em As Minhas Histórias, que o ajudam a encontrar conteúdo inseguro (HTTP) nas suas histórias e oferecem recomendações sobre como lidar com isso. Por favor, verifique se as suas histórias têm conteúdo inseguro e atualize para HTTPS antes de junho de 2018.",
+      "s2p1": "A Esri está a trabalhar para que esta transição seja simples para autores e leitores de Story Maps. Encontram-se agora disponíveis ferramentas, nos builders de Story Maps e em As Minhas Histórias, que o ajudam a encontrar conteúdo inseguro (HTTP) nas suas histórias e oferecem recomendações sobre como lidar com isso. Por favor, verifique se as suas histórias têm conteúdo inseguro e atualize para HTTPS assim que possível.",
       "action1": "Fechar",
       "action2": "Verificar as minhas histórias agora",
       "action3": "Obter mais informações"
+    },
+    "embedBar": {
+      "share": "Partilhar",
+      "fullScreen": "Ecrã inteiro",
+      "exitFullScreen": "Sair do modo de ecrã inteiro",
+      "enlarge": "Aumentar",
+      "newTab": "Abrir num novo separador",
+      "tagline": "Um Story Map"
+    },
+    "licenseChange2018": {
+      "noAccess": "A sua conta (%USER_NAME%) não está licenciada para abrir um Story Map não público. Peça ao administrador da sua organização para lhe atribuir um tipo de utilizador que inclua a licença para Story Maps ou aplicações essenciais complementares."
     }
   }
 });

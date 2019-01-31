@@ -12,7 +12,8 @@ define({
       "disabled": "Cette entité a été désactivée par l'administrateur",
       "userLookup": "Charger des albums",
       "notImplemented": "Fonction pas encore implémentée.",
-      "noData": "Aucun album public trouvé"
+      "noData": "Aucun album public trouvé",
+      "thirdPartyTerms": "En utilisant un service tiers, vous acceptez ses conditions d’utilisation : "
     },
     "imageSelector": {
       "lblStep1": "Choisir le service",
@@ -27,23 +28,14 @@ define({
       "lblDrop": "Déposer une image ici ou",
       "infoUpload": "Les images seront stockées dans votre compte ArcGIS et accessibles uniquement dans votre narration.",
       "warningFileTypes": "L'image peut être au format .jpg, .png, .gif ou .bmp",
-      "warningOneFile": "Un seul fichier est accepté à la fois.",
-      "warningFileSize": "Le fichier dépasse la limite de chargement autorisée. Choisissez un autre fichier.",
+      "warningOneFile": "Vous ne pouvez charger qu’une seule image à la fois.",
+      "warningFileSize": "La taille de l’image doit être inférieure à 10 Mo.",
       "tooltipRemove": "Supprimez cette image inutilisée de votre compte ArcGIS. <br> (Vous devrez la charger à nouveau si vous décidez de l'utiliser ultérieurement.)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Nom d'utilisateur",
       "signInMsg2": "Utilisateur introuvable",
       "loadingFailed": "Echec du chargement"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Utilisateur de Facebook",
-      "rightHeader": "Page Facebook",
-      "pageExplain": "Une page Facebook est une marque, une célébrité ou un produit public, comme <b>esrigis</b>. Vous pouvez obtenir le nom de la page après la première barre oblique inverse '/' de l'URL de la page.",
-      "pageInputLbl": "Nom de page",
-      "lookupMsgError": "Page introuvable",
-      "warning": "La prise en charge de Facebook a été interrompue, ${learn}.",
-      "learn": "en savoir plus"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "Adresse électronique ou identifiant Google",

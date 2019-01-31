@@ -12,7 +12,8 @@ define({
       "disabled": "Ova funkcija je onemogućena od strane administratora",
       "userLookup": "Učitaj albume",
       "notImplemented": "Još nije primenjeno.",
-      "noData": "Nijedan javni album nije pronađen"
+      "noData": "Nijedan javni album nije pronađen",
+      "thirdPartyTerms": "Korišćenjem usluge treće strane prihvatate odgovarajuće uslove korišćenja usluge: "
     },
     "imageSelector": {
       "lblStep1": "Odaberite servis",
@@ -27,23 +28,14 @@ define({
       "lblDrop": "Otpustite sliku ovde ili",
       "infoUpload": "Slike se čuvaju na ArcGIS nalog i dostupne su samo u okviru priče.",
       "warningFileTypes": "Snimak može da bude .jpg, .png, .gif ili .bmp",
-      "warningOneFile": "Prihvataju se pojedinačne datoteke slika.",
-      "warningFileSize": "Datoteka prevazilazi maksimalnu dozvoljenu veličinu za otpremanje. Odaberite drugu datoteku.",
+      "warningOneFile": "U datom trenutku je moguće otpremanje samo jednog snimka.",
+      "warningFileSize": "Snimak mora biti manji od 10 MB.",
       "tooltipRemove": "Izbrišite ovu nekorišćenu sliku sa ArcGIS naloga. <br> (Moraćete ponovo da je postavite ako ponovo poželite da je upotrebite.)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Korisničko ime",
       "signInMsg2": "Korisnik nije pronađen",
       "loadingFailed": "Učitavanje nije uspelo"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Facebook korisnik",
-      "rightHeader": "Facebook stranica",
-      "pageExplain": "Facebook stranica je javni brend/proizvod ili svetski poznat <b>esrigis</b>. Možete da dobijete naziv stranice nakon prve ‘/’u URL adresi stranice.",
-      "pageInputLbl": "Naziv stranice",
-      "lookupMsgError": "Stranica nije pronađena",
-      "warning": "Podrška za Facebook je ukinuta, ${learn}.",
-      "learn": "saznajte više"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-pošta ili Google ID",

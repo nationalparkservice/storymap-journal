@@ -12,7 +12,8 @@ define({
       "disabled": "Dette objekt er blevet deaktiveret af administratoren",
       "userLookup": "Indlæs albummer",
       "notImplemented": "Ikke implementeret endnu.",
-      "noData": "Intet offentligt album fundet"
+      "noData": "Intet offentligt album fundet",
+      "thirdPartyTerms": "Ved at benytte en tredjeparts-tjeneste accepterer du vilkårene for brug af den pågældende tjeneste: "
     },
     "imageSelector": {
       "lblStep1": "Vælg tjeneste",
@@ -27,23 +28,14 @@ define({
       "lblDrop": "Slip et billede her eller",
       "infoUpload": "Billeder vil blive gemt på din ArcGIS-konto og kun være tilgængelige inde i din historie.",
       "warningFileTypes": "Billede kan være .jpg, .png, .gif eller .bmp",
-      "warningOneFile": "Én fil accepteres ad gangen.",
-      "warningFileSize": "Filen overskrider den maksimalt tilladte overførselsstørrelse. Vælg en anden fil.",
+      "warningOneFile": "Du kan kun uploade et billede ad gangen.",
+      "warningFileSize": "Billedet skal være mindre end 10 MB.",
       "tooltipRemove": "Slet dette ubrugte billede fra din ArcGIS-konto. <br> (Du skal overføre det igen, hvis du beslutter at bruge det igen senere)."
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Brugernavn",
       "signInMsg2": "Bruger ikke fundet",
       "loadingFailed": "Indlæsning mislykkedes"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Facebook-bruger",
-      "rightHeader": "Facebook-side",
-      "pageExplain": "En Facebook-side er et offentligt varemærke//produkt eller en celebritet ligesom <b>esrigis</b>. Du kan få sidenavnet efter den første '/' i sidens URL.",
-      "pageInputLbl": "Sidenavn",
-      "lookupMsgError": "Side ikke fundet",
-      "warning": "Facebook-understøttelse er blevet standset, ${learn}.",
-      "learn": "lær mere"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "E-mail eller Google-ID",

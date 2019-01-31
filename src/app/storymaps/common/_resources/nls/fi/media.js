@@ -12,7 +12,8 @@ define({
       "disabled": "Pääkäyttäjä on poistanut tämän toiminnon käytöstä.",
       "userLookup": "Lataa albumit",
       "notImplemented": "Ei ole vielä toteutettu.",
-      "noData": "Julkista albumia ei löytynyt"
+      "noData": "Julkista albumia ei löytynyt",
+      "thirdPartyTerms": "Käyttämällä kolmannen osapuolen palvelua suostut sen palveluehtoihin: "
     },
     "imageSelector": {
       "lblStep1": "Valitse palvelu",
@@ -27,23 +28,14 @@ define({
       "lblDrop": "Vedä kuva tähän tai",
       "infoUpload": "Kuvat tallennetaan ArcGIS-tilillesi. Niitä voi käyttää vain tarinassasi.",
       "warningFileTypes": "Kuva voi olla jossakin seuraavista muodoista: .jpg, .png, .gif, tai .bmp.",
-      "warningOneFile": "Vain yksi tiedosto kerrallaan voidaan käsitellä.",
-      "warningFileSize": "Tiedoston koko ylittää palvelimelle ladattavien tiedostojen sallitun enimmäiskoon. Valitse toinen tiedosto.",
+      "warningOneFile": "Vain yhden kuvan voi ladata kerralla palvelimeen.",
+      "warningFileSize": "Kuvan on oltava kooltaan pienempi kuin 10 Mt.",
       "tooltipRemove": "Poista tämä käyttämätön kuva ArcGIS-tililtäsi. <br> (Sinun on ladattava se tilillesi uudelleen, jos päätät käyttää sitä myöhemmin.)"
     },
     "imageSelectorFlickr": {
       "userInputLbl": "Käyttäjätunnus",
       "signInMsg2": "Käyttäjää ei löydy",
       "loadingFailed": "Lataus epäonnistui"
-    },
-    "imageSelectorFacebook": {
-      "leftHeader": "Facebook-käyttäjä",
-      "rightHeader": "Facebook-sivu",
-      "pageExplain": "Facebook-sivu on julkinen tuotemerkki tai tunnettu tuote, kuten <b>esrigis</b>. Saat sivun nimen sivun URL-osoitteessa olevan ensimmäisen vinoviivan (/) jälkeen.",
-      "pageInputLbl": "Sivun nimi",
-      "lookupMsgError": "Sivua ei löydy",
-      "warning": "Facebook-tuki on lopetettu, ${learn}.",
-      "learn": "lisätietoja"
     },
     "imageSelectorPicasa": {
       "userInputLbl": "Sähköpostiosoite tai Google-tunnus",
