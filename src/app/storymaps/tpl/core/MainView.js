@@ -537,8 +537,6 @@ define(["lib-build/css!./MainView",
 				setCommonLayoutColor();
 				StoryText.createMainMediaActionLink();
 				StoryText.createMediaFullScreenButton();
-				app.ui.sidePanel.attachTabEvents();
-				app.ui.floatingPanel.attachTabEvents();
 				StoryText.styleSectionPanelContent();
 				StoryText.createMainStageFocusButton();
 

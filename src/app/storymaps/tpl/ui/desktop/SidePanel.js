@@ -249,17 +249,6 @@ define(["lib-build/tpl!./SidePanelSection",
 				HeaderHelper.toggleSocialBtnAppSharing(container, disable);
 			};
 
-			this.attachTabEvents = function() {
-				container.find('button,a')
-					.on('focus', function() {
-						var parentSection = $(this).parents('.section');
-						if (!parentSection.length) {
-							return;
-						}
-						onTabToSection(parentSection[0], this);
-					});
-			};
-
 			function setLayout(layoutOptions)
 			{
 				container.toggleClass("section-social-links", layoutOptions.socialLinks);
@@ -386,17 +375,6 @@ define(["lib-build/tpl!./SidePanelSection",
 
 				_this.showSectionNumber(index);
 				navigationCallback(index);
-			}
-
-			function onTabToSection(section) {
-				var index = $(section).index();
-
-				if (index >= _activeSectionIndex) {
-					onClickSection.bind(section)();
-				} else {
-					_this.showSectionNumber(index, false, true);
-					navigationCallback(index);
-				}
 			}
 
 			function onScroll()
